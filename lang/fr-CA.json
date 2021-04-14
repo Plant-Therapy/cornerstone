@@ -1,5 +1,5 @@
 {
-    "header": {
-        "welcome_back": "Bonjour, {name}"
-    }
+  "header": {
+    "welcome_back": "Bonjour, {name}"
+  }
 }
