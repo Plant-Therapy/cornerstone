@@ -58,6 +58,15 @@
 .blog-post {
     font-size: fontSize("smaller");
     text-align: left;
+    a {
+        color: #008000;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+            color: #9ab973;
+            text-decoration: underline;
+        }
+    }
 }
 
 .blog-thumbnail {
