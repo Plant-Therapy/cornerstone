@@ -1,7 +1,7 @@
 ---
 blog:
     posts:
-        limit: 5
+        limit: 10
         pages: 3
         summary: 200
 ---
@@ -9,14 +9,37 @@ blog:
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
+
+
 <main class="page">
     {{#unless theme_settings.hide_blog_page_heading }}
-        <h1 class="page-heading">{{ blog.name }}</h1>
+        <!--<h1 class="page-heading">{{ blog.name }}</h1>-->
     {{/unless}}
+    <div class="blog-nav">
+        <a href="/blog/"><img src="//cdn.planttherapy.com/images/web/global/Everyday-Essentials.png" alt="Everyday Essentials by Plant Therapy"></a>
 
+        <ul>
+            <li class="cat-item"><a href="/blog/tag/body-care">Body &amp; Skin Care</a>
+            </li>
+            <li class="cat-item"><a href="/blog/tag/DIY">DIYs</a>
+            </li>
+            <li class="cat-item"><a href="/blog/tag/essential-oil-101">Essential Oil 101</a>
+            </li>
+            <li class="cat-item"><a href="/blog/tag/household">Household</a>
+            </li>
+            <li class="cat-item"><a href="/blog/tag/pt-news">PT News</a>
+            </li>
+            <li class="cat-item "><a href="/blog/tag/self-care-wellness">Self Care &amp; Wellness</a>
+            </li>
+            </ul>
+    </div>
+
+    <div class="blog-body">
     {{#each blog.posts}}
         {{> components/blog/post post=this}}
     {{/each}}
+    </div>
+    
 
     {{> components/common/paginator pagination.blog}}
 </main>

@@ -107,3 +107,42 @@
         width: grid-calc(6, $total-columns);
     }
 }
+
+.blog-nav {
+    text-align: center;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        margin-bottom: 30px!important;
+         
+        li {
+            margin: 0 10px;
+            white-space: nowrap;
+            font-size: 23px;
+            a {
+                text-decoration: none;
+              
+            }
+            &:not(:last-child):after {
+                content: "|";
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.blog-body {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .blog {
+        width: 45%;
+        @media(max-width: 860px) {
+            width: 100%;
+        }
+    }
+}
