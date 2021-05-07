@@ -99,29 +99,66 @@
 // -----------------------------------------------------------------------------
 
 .footer-info-heading {
-    color: $footer-heading-fontColor;
+    color: $color-graygreen;
     font-size: fontSize("base");
     text-transform: inherit;
+    font-family: $font-Nunito;
+
+}
+.footer {
+    article {
+        a {
+            //color: stencilColor("color-textSecondary");
+            color: $color-graygreen;
+            text-decoration: none;
+    
+            // scss-lint:disable NestingDepth
+            &:hover {
+                //color: stencilColor("color-textSecondary--hover");
+                color: $color-ptgreen;
+                font-weight: 700;
+            }
+            // scss-lint:enable NestingDepth
+        }
+    }
 }
 
 .footer-info-list {
     list-style: none;
     margin-left: 0;
+    font-family: $font-Nunito;
+    color: $color-graygreen;
+    //line-height: 2em;
+    li {
+        margin-bottom: 10px;
+    }
 
     a {
-        color: stencilColor("color-textSecondary");
+        //color: stencilColor("color-textSecondary");
+        color: $color-graygreen;
         text-decoration: none;
 
         // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            //color: stencilColor("color-textSecondary--hover");
+            color: $color-ptgreen;
+            font-weight: 700;
         }
         // scss-lint:enable NestingDepth
+    }
+
+}
+.footer-policies-mobile {
+    display:block;
+    @media (min-width: $screen-small) {
+        display: none;
     }
 }
 
 .footer-copyright {
     text-align: center;
+    border-top: container("border");
+    padding-top:20px;
 
     @include breakpoint("small") {
         text-align: left;
@@ -140,15 +177,42 @@
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: $color-graygreen;
         text-decoration: none;
+        margin: 0 15px;
+        &:first-child{
+            margin-left: 0;
+        }
 
         // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: $color-ptgreen;
+            font-weight: 700;
         }
         // scss-lint:enable NestingDepth
+        
     }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    p {
+        color: $color-graygreen;
+    }
+    .footer-policies {
+        display: flex;
+        a {
+            padding: 0 2px;
+            &:hover {
+                padding: 0;
+            }
+        }
+        @media (max-width: $screen-small) {
+            display: none;
+        }
+    }
+    
 }
 
 .footer-payment-icons {
@@ -185,4 +249,41 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+.footer {
+    .certifications {
+        padding: 0 30px;
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            
+            //align-items: center
+            span {
+                width: 110px;
+                padding: 0 10px 25px;
+            }
+            a {
+                //width: 50px;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+        @media (max-width: $screen-medium) {
+            width: 100%;
+            padding: 0;
+            div {
+                width: 100%;
+                span {
+                    flex: 1;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+#consent-manager {
+    display: none;
 }
