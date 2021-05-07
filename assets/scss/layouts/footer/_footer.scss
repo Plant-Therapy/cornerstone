@@ -39,15 +39,18 @@
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
-    margin-bottom: spacing("double");
-    text-align: center;
+    margin-bottom: 1.5rem;
+    //text-align: center;
     vertical-align: top;
     // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here 
     -ms-word-break: break-all;
     overflow-wrap: break-word;
+    padding-bottom: 1.5rem; 
+    border-bottom: 1px solid $color-gray;
     @include breakpoint("small") {
         text-align: left;
         width: width("6/12");
+        border: none;
     }
 
     @include breakpoint("medium") {
@@ -103,6 +106,9 @@
     font-size: fontSize("base");
     text-transform: inherit;
     font-family: $font-Nunito;
+    @media (max-width: $screen-medium) {
+        font-size: 1.2em;
+    }
 
 }
 .footer {
