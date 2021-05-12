@@ -37,6 +37,10 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
+      # Update the theme's version by updating the name
+    - name: Update theme name with timestamp
+      run: npm run bumpThemeName
+
 #
 # You must configure store credentials as secrets on your GitHub repo for automatic deployment via GitHub Actions
 #
@@ -47,5 +51,8 @@ jobs:
         TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_PRODUCTION }}
       run: stencil init -u $URL -t $TOKEN -p 3000
 
-    - name: Push theme live, automatically deleting oldest theme if necessary
+    - name: Sync changes made to theme settings via the Page Builder
+      run: stencil pull
+
+    - name: Bundle and push theme live, automatically deleting oldest theme if necessary
       run: stencil push -a -d
