@@ -1,3 +1,33 @@
+<script
+	id="bolt-connect"
+	type="text/javascript"
+	src="https://connect.bolt.com/connect-bigcommerce.js"
+	data-publishable-key="uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1"
+	data-storefront-api-token="{{settings.storefront_api.token}}"
+>
+</script>
+
+<script>
+    if (window.BoltCheckout && window.BoltCheckout.reloadBigCommerceCart) {
+        window.BoltCheckout.reloadBigCommerceCart();
+    } else {
+        console.log("window.BoltCheckout.reloadBigCommerceCart is not defined");
+    }
+</script>
+
+<style>
+    .previewCartAction-viewCart {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .previewCartAction-viewCart .button {
+        height: 48px;
+        padding: 15px .78571rem;
+    }
+    
+</style>
+
 <div class="previewCartWrapper">
   <div class="previewCart">
     {{#if cart.items.length}}
@@ -47,9 +77,14 @@
                 {{/each}}
             </ul>
             <div class="previewCartAction">
+                <div data-tid="instant-bolt-checkout-button">
+                    <object data="https://connect.bolt.com/v1/checkout_button?publishable_key=uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1">
+                    </object>
+                </div>
+
                 {{#if cart.show_primary_checkout_button}}
                     <div class="previewCartAction-checkout">
-                        <a href="{{urls.checkout.single_address}}" class="button button--small button--primary">
+                        <a href="{{urls.checkout.single_address}}" class="button button--small button--primary" style="display:none;">
                             {{lang 'cart.preview.checkout_now'}}
                         </a>
                     </div>
