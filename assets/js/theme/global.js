@@ -30,7 +30,7 @@ export default class Global extends PageManager {
         menu();
         mobileMenuToggle();
         privacyCookieNotification();
-        
+
         if (showAdminBar) {
             adminBar(secureBaseUrl, channelId, maintenanceModeSettings, JSON.parse(adminBarLanguage), productId, categoryId);
         }
@@ -40,6 +40,6 @@ export default class Global extends PageManager {
         const el = document.createElement('script');
         el.setAttribute('src', url);
         document.querySelector('body').append(el);
-        window.b3themeConfig = {}
+        window.b3themeConfig = {};
     }
 }
