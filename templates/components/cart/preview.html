@@ -1,3 +1,20 @@
+<script
+	id="bolt-connect"
+	type="text/javascript"
+	src="https://connect.bolt.com/connect-bigcommerce.js"
+	data-publishable-key="uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1"
+	data-storefront-api-token="{{settings.storefront_api.token}}"
+>
+</script>
+
+<script>
+    if (window.BoltCheckout && window.BoltCheckout.reloadBigCommerceCart) {
+        window.BoltCheckout.reloadBigCommerceCart();
+    } else {
+        console.log("window.BoltCheckout.reloadBigCommerceCart is not defined");
+    }
+</script>
+
 <div class="modal-header">
     <h1 class="modal-header-title">
         {{lang 'cart.added_to_cart.what_next' num_products=cart.quantity}}
@@ -7,8 +24,13 @@
 <div class="modal-body">
     <div class="previewCart">
         <section class="previewCartCheckout">
+            <div data-tid="instant-bolt-checkout-button">
+                <object data="https://connect.bolt.com/v1/checkout_button?publishable_key=uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1">
+                </object>
+            </div>
+
             {{#if cart.show_primary_checkout_button}}
-                <a href="{{urls.checkout.single_address}}" class="button button--primary">
+                <a href="{{urls.checkout.single_address}}" class="button button--primary" style="display:none;">
                     {{lang 'cart.added_to_cart.proceed_to_checkout'}}
                 </a>
             {{/if}}
