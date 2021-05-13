@@ -35,7 +35,7 @@
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
         <li class="navUser-item">
-            <button class="navUser-action navUser-action--quickSearch"
+            <!--<button class="navUser-action navUser-action--quickSearch"
                type="button"
                id="quick-search-expand"
                data-search="quickSearch"
@@ -43,7 +43,8 @@
                aria-label="{{lang 'common.search'}}"
             >
                 {{lang 'common.search'}}
-            </button>
+            </button>-->
+            {{> components/common/header-search name='nav-quick-search'}}
         </li>
         {{#if settings.gift_certificates_enabled}}
             <li class="navUser-item">
@@ -55,6 +56,16 @@
                 </a>
             </li>
         {{/if}}
+
+        <li class="navUser-item navUser-item--wishlist">
+            <a class="navUser-action"
+               href="{{urls.account.wishlists.all}}"
+               aria-label="Wishlist"
+            >
+            <img src="/assets/icons/icon-wishlist.svg" alt="Account">
+            </a>
+        </li>
+
         <li class="navUser-item navUser-item--account">
             {{#if customer}}
                 <a class="navUser-action"
@@ -74,9 +85,10 @@
                    href="{{urls.auth.login}}"
                    aria-label="{{lang 'common.login'}}"
                 >
-                    {{lang 'common.login'}}
+                <img src="/assets/icons/icon-account.svg" alt="Account">
+                    <!--{{lang 'common.login'}}-->
                 </a>
-                {{#if settings.account_creation_enabled}}
+                <!--{{#if settings.account_creation_enabled}}
                     <span class="navUser-or">{{lang 'common.or'}}</span>
                     <a class="navUser-action"
                        href="{{urls.auth.create_account}}"
@@ -84,7 +96,7 @@
                     >
                         {{lang 'common.sign_up'}}
                     </a>
-                {{/if}}
+                {{/if}}-->
             {{/if}}
         </li>
         <li class="navUser-item navUser-item--cart">
@@ -95,7 +107,8 @@
                href="{{urls.cart}}"
                aria-label="{{lang 'cart.nav_aria_label'}}"
             >
-                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span>
+                <!--<span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span>-->
+                <img src="/assets/icons/icon-cart.svg" alt="Cart">
                 <span class="countPill cart-quantity"></span>
             </a>
 

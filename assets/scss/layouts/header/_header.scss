@@ -48,8 +48,18 @@
         position: relative;
         height: auto;
         display: flex;
-        flex-direction: column;
+        //flex-direction: column;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
         top: 0;
+        min-height: 90px;
+        background-color: #F9FAF7;
+
+
+    }
+    @media (min-width: 1130px) {
+        padding: 0 40px;
     }
 
     &.is-open {
@@ -59,6 +69,7 @@
             height: auto;
         }
     }
+
 }
 
 .header-logo {
@@ -68,12 +79,14 @@
     height: $header-height;
 
     @include breakpoint("small") { // 4
-        margin-left: remCalc($header-toggle-width * 1.5);
-        margin-right: remCalc($header-toggle-width * 1.5);
+        //margin-left: remCalc($header-toggle-width * 1.5);
+        //margin-right: remCalc($header-toggle-width * 1.5);
+        margin-left: 0;
+        margin-right: 0;
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        //margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
         height: auto;
 
@@ -179,7 +192,7 @@
     width: 100%;
 
     @include breakpoint("medium") {
-        min-height: get-height(stencilString('logo_size'));
+        //min-height: get-height(stencilString('logo_size'));
     }
 }
 

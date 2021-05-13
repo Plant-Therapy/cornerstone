@@ -31,6 +31,27 @@
         top: auto;
         transform: none;
         z-index: zIndex("high");
+        width: auto;
+
+        form {
+            margin-bottom: 0;
+            margin-right: 10px;
+            .form-fieldset {
+                border-radius: 21px;
+                border: 1px solid $color-gray;
+                background-color: #fff;
+            }
+        }
+        .form-field {
+            margin-bottom: 0;
+            border: 0;
+
+            .form-input {
+                border-radius:21px;
+                border: 0;
+                
+            }
+        }
     }
 
     .dropdown-menu {
@@ -75,9 +96,11 @@
 .navUser-action {
     color: stencilColor("navUser-color");
     font-weight: fontWeight("bold");
-    padding: spacing("base") spacing("half");
+    //padding: spacing("base") spacing("half");
+    padding: 1em;
     text-decoration: none;
     text-transform: uppercase;
+    margin: 0 10px;
 
     &:hover,
     &.is-open {
@@ -171,11 +194,22 @@
 
     .navUser-action {
         color: stencilColor("navUser-color");
-
+        position: relative;
+        padding: 0;
+        border: 1px solid $color-gray;
+        background-color: #FFF;
+        height:40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
         // scss-lint:disable NestingDepth
         &:hover,
         &.is-open {
             color: stencilColor("navUser-color-hover");
+        }
+        img {
+            margin: 0 1px;
         }
     }
 
@@ -241,6 +275,29 @@
 
     .navUser-action {
         display: inline-block;
+        padding: 0;
+        //margin: 0 20px;
+        //border: 1px solid $color-grey;
+        height:40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+.navUser-item--wishlist {
+
+
+    .navUser-action {
+        display: inline-block;
+        padding: 0;
+        //margin: 0 20px;
+        //border: 1px solid $color-grey;
+        height:40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
     }
 }
 
@@ -332,17 +389,21 @@
 // -----------------------------------------------------------------------------
 
 .countPill {
-    background-color: stencilColor("navUser-indicator-backgroundColor");
+    //background-color: stencilColor("navUser-indicator-backgroundColor");
+    background-color: #E16B58;
     border-radius: 50%;
     color: color("whites", "bright");
     display: none;
-    font-size: fontSize("tiny");
+    //font-size: fontSize("tiny");
+    font-size: 9px;
     font-weight: fontWeight("bold");
-    height: 20px; // 1
-    line-height: 20px; // 1
+    height: 18px; // 1
+    line-height: 18px; // 1
     margin-left: spacing("eighth");
     text-align: center;
-    width: 20px; // 1
+    width: 18px; // 1
+    position: absolute;
+    top:-1px;
 }
 
 .countPill--positive {
