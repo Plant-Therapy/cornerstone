@@ -47,9 +47,6 @@ jobs:
         TOKEN: ${{ secrets.STENCIL_ACCESS_TOKEN_PRODUCTION }}
       run: stencil init -u $URL -t $TOKEN -p 3000
 
-    - name: Sync changes made to theme settings via the Page Builder
-      run: stencil pull
-
       # Update the theme's version by updating the name
     - name: Update theme name with timestamp
       run: npm run bumpThemeName
