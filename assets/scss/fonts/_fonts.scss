@@ -1,5 +1,5 @@
 @import "clear-sans";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito:wght@300;400;600;700&display=swap');
 
 $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings $fontFamily-hero;
 
@@ -8,4 +8,5 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
 }
 
 $font-Nunito:       'Nunito', sans-serif;
+$font-Marcellus:    'Marcellus', serif;
 $font-fontawesome:  'Font Awesome 5 Free';
