@@ -39,15 +39,18 @@
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
-    margin-bottom: spacing("double");
-    text-align: center;
+    margin-bottom: 1.5rem;
+    //text-align: center;
     vertical-align: top;
     // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here 
     -ms-word-break: break-all;
     overflow-wrap: break-word;
+    padding-bottom: 1.5rem; 
+    border-bottom: 1px solid $color-gray;
     @include breakpoint("small") {
         text-align: left;
         width: width("6/12");
+        border: none;
     }
 
     @include breakpoint("medium") {
@@ -99,29 +102,70 @@
 // -----------------------------------------------------------------------------
 
 .footer-info-heading {
-    color: $footer-heading-fontColor;
-    font-size: fontSize("base");
+    color: $color-graygreen;
+    font-size: 14px;
     text-transform: inherit;
+    font-weight: 700;
+    font-family: $font-Nunito;
+    @media (max-width: $screen-medium) {
+        font-size: 1.2em;
+    }
+
+}
+.footer {
+    article {
+        a {
+            //color: stencilColor("color-textSecondary");
+            color: $color-graygreen;
+            text-decoration: none;
+    
+            // scss-lint:disable NestingDepth
+            &:hover {
+                //color: stencilColor("color-textSecondary--hover");
+                color: $color-ptgreen;
+                font-weight: 700;
+            }
+            // scss-lint:enable NestingDepth
+        }
+    }
 }
 
 .footer-info-list {
     list-style: none;
     margin-left: 0;
+    font-family: $font-Nunito;
+    color: $color-graygreen;
+    //line-height: 2em;
+    li {
+        margin-bottom: 10px;
+    }
 
     a {
-        color: stencilColor("color-textSecondary");
+        //color: stencilColor("color-textSecondary");
+        color: $color-graygreen;
         text-decoration: none;
 
         // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            //color: stencilColor("color-textSecondary--hover");
+            color: $color-ptgreen;
+            font-weight: 700;
         }
         // scss-lint:enable NestingDepth
+    }
+
+}
+.footer-policies-mobile {
+    display:block;
+    @media (min-width: $screen-small) {
+        display: none;
     }
 }
 
 .footer-copyright {
     text-align: center;
+    border-top: container("border");
+    padding-top:20px;
 
     @include breakpoint("small") {
         text-align: left;
@@ -140,15 +184,42 @@
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: $color-graygreen;
         text-decoration: none;
+        margin: 0 15px;
+        &:first-child{
+            margin-left: 0;
+        }
 
         // scss-lint:disable NestingDepth
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: $color-ptgreen;
+            font-weight: 700;
         }
         // scss-lint:enable NestingDepth
+        
     }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    p {
+        color: $color-graygreen;
+    }
+    .footer-policies {
+        display: flex;
+        a {
+            padding: 0 2px;
+            &:hover {
+                padding: 0;
+            }
+        }
+        @media (max-width: $screen-small) {
+            display: none;
+        }
+    }
+    
 }
 
 .footer-payment-icons {
@@ -185,4 +256,215 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+.footer {
+    .certifications {
+        padding: 0 30px;
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            
+            //align-items: center
+            span {
+                width: 110px;
+                padding: 0 10px 25px;
+            }
+            a {
+                //width: 50px;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+        @media (max-width: $screen-medium) {
+            width: 100%;
+            padding: 0;
+            div {
+                width: 100%;
+                span {
+                    flex: 1;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+.footer-signup {
+    background: url('/assets/img/Footer-Flowers-Mobile.png') bottom left no-repeat $color-graygreen;
+    text-align: center;
+    color: $color-lighttext;
+    padding: 60px 20px;
+
+    h2 {
+        font-family: $font-Marcellus;
+        font-size: 30px;
+        color: $color-lighttext;
+    }
+    p {
+        font-family: $font-Nunito;
+        font-size: 1em;
+    }
+    .footer-social-links {
+        font-family: $font-fontawesome;
+        display: flex;
+        justify-content: space-evenly;
+        a {
+            color: $color-lighttext;
+            background: $color-graygreen;
+            height: 38px;
+            width: 38px;
+            line-height: 38px;
+            display: inline-block;
+            margin: 10px 2px;
+            &:hover {
+                color:$color-ptgreen;
+            }
+            border: 1px solid $color-lighttext;
+            border-radius: 50%;
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+      }
+      
+      #button {
+        position: relative;
+        display: block;
+        width:141px;
+        height: 30px;
+        background-color: #707F7E;
+        border-radius: 100px;
+        cursor: pointer;
+      
+        margin: 20px auto;
+      }
+      
+      #knob {
+        width: 70px;
+        height: 22px;
+        background: $color-ptgreen;
+        
+        position: relative;
+        top: 4px;
+        left: 4px;
+        border-radius: 100px;
+        transition: 0.4s ease left;
+        z-index: 2;
+      }
+      
+      #email,
+      #text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: $font-Nunito;
+        margin-left: 91px;
+        z-index: 5;
+      }
+      
+      #email {
+        margin-left: 20px;
+      }
+      
+      #subscribe-method:checked + #button #knob {
+        left: 66px;
+
+      }
+      form {
+        width:90%;
+        margin: 10px auto;
+        .form-field {
+            background-color: #fff;
+            border-radius: 21px;
+        }
+        button {
+            color: $color-ptgreen;
+            font-weight: 700;
+            padding-right: 10px;
+            text-transform: uppercase;
+        }
+        .form-input {
+            border-radius: 21px;
+            border: 0;
+
+             
+        }
+    }
+      
+
+    @include breakpoint("medium") {
+        background: url('/assets/img/Footer-Flowers.png') bottom center no-repeat $color-graygreen;
+        padding: 60px 40px;
+        background-size: cover;
+
+        form {
+            width:375px;
+        }
+
+        h2 {
+            font-size: 33px;
+        }
+        p {
+            font-size: 1.3em;
+        }
+        .footer-social-links {
+            font-family: $font-fontawesome;
+            display: flex;
+            justify-content: center;
+            a {
+                margin: 10px 15px;
+            }
+        }
+    }
+}
+.footer-pt-info {
+    background-color: $color-lighttext;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: $font-Nunito;
+        width: 50%;
+        padding: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            margin: 0 auto;
+        }
+        div {
+            width: 40%;
+            text-align: center;
+            //margin-right: 20px;
+            flex: 1;
+            padding-right: 10px;
+        }
+        span {
+            text-align: left;
+            flex: 1;
+        }
+
+    }
+
+    @include breakpoint("medium") {
+        a {
+            width: 25%;
+            &:not(:last-child) {
+                border-right: 1px solid $color-gray;
+            }
+        }
+
+    }
 }

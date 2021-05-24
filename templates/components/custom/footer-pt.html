@@ -1,0 +1,226 @@
+{{#if banners.bottom}}
+{{#if settings.data_tag_enabled}}
+<div class="banners" data-banner-location="bottom">
+    {{#each (limit banners.bottom_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}"
+        data-position="{{this.location}}" data-name="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<div class="banners" data-banner-location="bottom">
+    <div class="banner">
+        {{{limit banners.bottom 1}}}
+    </div>
+</div>
+{{/if}}
+
+{{/if}}
+<section class="footer-signup">
+    <h2>Don't Miss Out</h2>
+    <p>Be the first to know by text or email about our latest products and offers!</p>
+    <input type="checkbox" id="subscribe-method">
+
+    <label id="button" for="subscribe-method">
+      <div id="knob"></div>
+      <div id="email">Email</div>
+      <div id="text">Text</div>
+    </label>
+    <form class="form"  action="#">
+        <fieldset class="form-fieldset">
+            <div class="form-field">
+                <label class="form-label is-srOnly" for="subscribe">Subscribe Form</label>
+                <div class="form-prefixPostfix wrap">
+                    <input class="form-input" id="subscribe" name="subscribe" value="" placeholder="Enter Email Address">
+                    <button class="" type="submit" alt="Subscribe Submit">Subscribe</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <div class="footer-social-links">
+        <a href="#" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Pintrest"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+    </div>
+</section>
+<section class="footer-pt-info">
+    <div class="container">
+        <a href="#"><div><img src="/assets/icons/icon-free-shipping.svg"></div><span>Free Shipping on All Orders</span></a>
+        <a href="#"><div><img src="/assets/icons/icon-planting-kindness.svg"></div><span>Planting Kindess How we give back</span></a>
+        <a href="#"><div><img src="/assets/icons/icon-guarantee.svg"></div><span>Customer Satisfaction Guarantee</span></a>
+        <a href="#"><div><img src="/assets/icons/icon-lab-tested.svg"></div><span>100% Lab Tested Ingredients</span></a>
+
+    </div>
+
+</section>
+
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="container">
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+        <article
+            class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+            data-section-type="footer-webPages">
+            <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
+            {{> components/common/social-links}}
+        </article>
+        {{/if}}
+
+
+        
+        <section class="footer-info">
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">{{lang 'footer.help'}}</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Gift Certificate</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">Affiliate</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </article>
+
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">{{lang 'footer.about'}}</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Giving Back</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Rewards</a></li>
+                    <li><a href="https://plant-therapy.careerplug.com/account">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+
+                </ul>
+            </article>
+
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">{{lang 'footer.learn'}}</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">Resource Center</a></li>
+                    <li><a href="#">Essential Oils 101</a></li>
+                    <li><a href="#">Quality</a></li>
+                </ul>
+            </article>
+
+            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
+                <h3 class="footer-info-heading">{{lang 'footer.hello'}}</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Stores</a></li>
+
+
+                </ul>
+                <ul class="footer-info-list">
+                    <li>Sales: <a href="tel:8009176577">800&#8209;917&#8209;6577</a><br>
+                        Wholesale: <a href="tel:8889126293">888&#8209;912&#8209;6293</a>
+                    </li>
+
+                </ul>
+                <ul class="footer-info-list">
+                    <li>Mon-Sat 6am to 10pm MT US<br>
+                        Sun 8am to 6pm MT US </li>
+
+                </ul>
+                <!-- {{#if settings.address}}
+                <address>{{nl2br settings.address}}</address>
+                {{/if}}-->
+            </article>
+
+            <article class="footer-info-col footer-info-col--small footer-policies-mobile">
+                <h3 class="footer-info-heading">Policies</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Medical Disclosures</a></li>
+                    <li><a href="#"><i class="fab fa-accessible-icon"></i> Accessibilty</a></li>
+
+
+                </ul>
+            </article>
+
+            <article class="footer-info-col certifications">
+                <div>
+                    <span>
+                        <a href="#">
+                            <img src="/assets/img/logo-LeapingBunny.png" alt="Leaping Bunny"></a>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="/assets/img/logo-USDAOrganic.png" alt="USDA Organic"></a>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="/assets/img/logo-EPA-GreenPowerPartner.png" alt="EPA Green Power Partner"></a>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="/assets/img/logo-CosmeticGMP.png" alt="Pfeiffer Consulting Cosmetic-GMP"></a>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="/assets/img/logo-Kosher.png" alt="Kosher"></a>
+                        </a>
+                        <span></span>
+                </div>
+
+            </article>
+
+
+            <!--<article class="footer-info-col" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+                {{> components/common/payment-icons}}
+            </article>-->
+        </section>
+        {{#if theme_settings.geotrust_ssl_common_name}}
+        <div class="footer-geotrust-ssl-seal">
+            {{> components/common/geotrust-ssl-seal}}
+        </div>
+        {{/if}}
+        {{#if settings.paypal_commerce_credit_message}}
+        <div class="footer-copyright">
+            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+        </div>
+        {{/if}}
+        <!--{{#if theme_settings.show_powered_by}}
+        <div class="footer-copyright">
+            <p class="powered-by">{{lang 'footer.powered_by'}} <a
+                    href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC"
+                    rel="nofollow">BigCommerce</a></p>
+        </div>
+        {{/if}}-->
+
+    </div>
+    {{#if theme_settings.show_copyright_footer}}
+    <div class="footer-copyright">
+        <div class="container">
+            <div>
+                <p class="powered-by">Copyright &copy; {{moment format="YYYY"}} {{settings.store_name}} All Rights
+                    Reserved</p>
+            </div>
+            <div class="footer-policies">
+                <a href="#">Privacy Policy</a><a href="#">Cookies Policy</a><a href="#">Terms & Conditions</a><a
+                    href="#">Medical Disclosures</a><a href="#"><i class="fab fa-accessible-icon"></i> Accessibilty</a>
+            </div>
+
+        </div>
+    </div>
+
+    {{/if}}
+</footer>

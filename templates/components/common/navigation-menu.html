@@ -6,11 +6,14 @@
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
-                {{> components/common/navigation-list}}
+                {{> components/common/navigation-list-custompt}}
+
+                <!-- 'navigation-list' is the original file -->
             {{/if}}
             {{#if ../theme_settings.navigation_design '===' 'alternate'}}
                 {{> components/common/navigation-list-alternate}}
             {{/if}}
+            
             </li>
         {{/each}}
         {{#unless theme_settings.hide_content_navigation}}

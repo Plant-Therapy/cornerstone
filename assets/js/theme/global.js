@@ -30,10 +30,16 @@ export default class Global extends PageManager {
         menu();
         mobileMenuToggle();
         privacyCookieNotification();
+
         if (showAdminBar) {
             adminBar(secureBaseUrl, channelId, maintenanceModeSettings, JSON.parse(adminBarLanguage), productId, categoryId);
         }
         loadingProgressBar();
         svgInjector();
+        const url = 'https://cdn.bundleb2b.net/bundleb2b.2.10.0.js';
+        const el = document.createElement('script');
+        el.setAttribute('src', url);
+        document.querySelector('body').append(el);
+        window.b3themeConfig = {};
     }
 }

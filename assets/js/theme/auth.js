@@ -179,6 +179,7 @@ export default class Auth extends PageManager {
 
             event.preventDefault();
         });
+        window.createAccountValidator = createAccountValidator;
     }
 
     /**

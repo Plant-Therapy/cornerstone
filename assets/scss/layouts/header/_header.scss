@@ -37,7 +37,7 @@
     background-color: $header-bg;
     border-bottom: container("border");
     position: fixed;
-    top: 0;
+    top: 36px;
     width: 100%;
     z-index: zIndex("higher");
     height: $header-height;
@@ -48,7 +48,18 @@
         position: relative;
         height: auto;
         display: flex;
-        flex-direction: column;
+        //flex-direction: column;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        min-height: 90px;
+        background-color: #F9FAF7;
+
+
+    }
+    @media (min-width: 1130px) {
+        padding: 0 40px;
     }
 
     &.is-open {
@@ -58,6 +69,7 @@
             height: auto;
         }
     }
+
 }
 
 .header-logo {
@@ -67,12 +79,14 @@
     height: $header-height;
 
     @include breakpoint("small") { // 4
-        margin-left: remCalc($header-toggle-width * 1.5);
-        margin-right: remCalc($header-toggle-width * 1.5);
+        //margin-left: remCalc($header-toggle-width * 1.5);
+        //margin-right: remCalc($header-toggle-width * 1.5);
+        margin-left: 0;
+        margin-right: 0;
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        //margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
         height: auto;
 
@@ -178,7 +192,7 @@
     width: 100%;
 
     @include breakpoint("medium") {
-        min-height: get-height(stencilString('logo_size'));
+        //min-height: get-height(stencilString('logo_size'));
     }
 }
 
@@ -274,5 +288,115 @@
             transform: rotate(-45deg);
         }
 
+    }
+}
+
+//-------------------------------------------------------
+// Plant Therapy Preheader Custom SCSS
+//-------------------------------------------------------
+.preheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: $color-graygreen;
+    height: 36px;
+    position: relative;
+    z-index: 500;
+    width: 100%;
+
+    >div {
+        //flex: 1;
+        @media (min-width: 950px) {
+            flex: 1;
+        }
+        text-align: center;
+        font-family: $font-Nunito;
+        a {
+            color: $color-preheader-link;
+            text-decoration: none;
+        }
+        &.preheader-rewards {
+            text-align: left;
+            img {
+                height: 16px;
+            }
+            @media (max-width: $screen-medium) {
+                display: none;
+            }
+        }
+        &.preheader-shipping {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            @media (max-width: $screen-medium){
+                flex: 1;
+            }
+            
+        }
+        &.preheader-contact {
+            text-align: right; 
+            font-size: 11px;
+            font-weight: 400;
+            > a, > div {
+                margin: 0 15px;
+            }
+            > a {
+                padding-bottom: 10px;
+                i {
+                    font-size: 9px;
+                }
+                
+            }
+            @media (max-width: $screen-medium) {
+                display: none;
+            }
+        }
+
+    }
+    .preheader-drop {
+        background-color: #FFF;
+        border: 1px solid #E5E5E5;
+        text-align: left;
+        padding: 20px 30px;
+        max-width: 260px;
+        a {
+            color: $color-graygreen;
+            margin: 0;
+            padding: 0;
+            &:hover {
+                color: $color-ptgreen;
+            }
+        }
+        ul {
+            list-style: none;
+            
+
+            li {
+                
+                padding: 15px 0 20px;
+                text-align: left;
+
+            }
+        }
+        p {
+            border-bottom: 1px solid $color-grey;
+            padding: 20px 0;
+            margin: 0;
+            img {
+                margin-right: 10px;
+            }
+
+        }
+        span {
+            line-height: 2em;
+            a {
+                font-weight: 700;
+            }
+        }
+    }
+    @media (max-width: $screen-medium) {
+         position: fixed;
+         top: 0;
     }
 }

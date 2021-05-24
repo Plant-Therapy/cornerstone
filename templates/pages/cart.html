@@ -2,6 +2,46 @@
 cart: true
 ---
 {{#partial "page"}}
+
+<script
+	id="bolt-connect"
+	type="text/javascript"
+	src="https://connect.bolt.com/connect-bigcommerce.js"
+	data-publishable-key="uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1"
+	data-storefront-api-token="{{settings.storefront_api.token}}"
+>
+</script>
+
+<script>
+    var config = { childList: true, subtree: true };
+		// Change totalClassName
+		// For fast cart it may be "previewCartCheckout-subtotal"
+		// For minicart it's better to use the shorter code snippet below
+    var totalClassName = "cart-total-grandTotal";
+    var bigCommerceTotalPrice = "";
+    var callback = function(mutationsList) {
+		setTimeout(function() {
+			var elms = document.getElementsByClassName(totalClassName);
+	        if (elms.length == 0) {
+	            return;
+	        }
+	        
+	        var newPrice = elms[0].innerHTML;
+			if (bigCommerceTotalPrice == "") {
+              bigCommerceTotalPrice = newPrice;
+              return;
+            }
+	        
+	        if (newPrice !== bigCommerceTotalPrice && window.BoltCheckout && window.BoltCheckout.reloadBigCommerceCart) {
+	            window.BoltCheckout.reloadBigCommerceCart();
+	        }
+	        
+	        bigCommerceTotalPrice = newPrice;
+		}, 200);
+    };
+    new MutationObserver(callback).observe(document.body, config);
+</script>
+
 <div class="page">
 
     <main class="page-content" data-cart>
@@ -28,7 +68,18 @@ cart: true
 
             {{#if cart.show_primary_checkout_button}}
                 <div class="cart-actions cart-content-padding-right">
-                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
+                    <div data-tid="instant-bolt-checkout-button" style="float: right;">
+	                    <object data="https://connect.bolt.com/v1/checkout_button?publishable_key=uBvrMAPss-PG.vqYYtsZUqEa8.47a1ee992a89a087d4947315d6b26392425ffe1e94669201bae492e1603abaa1">
+	                    </object>
+                    </div>
+
+                    <a class="button button--primary" 
+                        href="{{urls.checkout.single_address}}" 
+                        title="{{lang 'cart.checkout.title'}}"
+                        style="display:none;"
+                    >
+                        {{lang 'cart.checkout.button'}}
+                    </a>
                     {{#if cart.show_multiple_address_shipping}}
                         <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
                             {{lang 'cart.preview.checkout_multiple'}}

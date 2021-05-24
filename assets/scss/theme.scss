@@ -85,3 +85,55 @@
 @import "layouts/layouts"; // 1
 
 @import "vendor/jstree/style";
+
+
+.tingle-modal-box {
+  background-color: stencilColor('container-border-global-color-base') !important;
+}
+.dropdown-menu.show-action {
+  background-color: stencilColor('navUser-dropdown-backgroundColor');
+}
+.cart-info {
+  color: stencilColor('color-textLink--active');
+}
+#shopping_list_table >tbody>tr:hover {
+  background-color: stencilColor('optimizedCheckout-orderSummary-borderColor') !important;
+}
+.modal-close:before, .modal-close:after {
+  content: none;
+}
+.file-upload-drop {
+  color: stencilColor('color-textLink--active');
+}
+.card-figcaption-body > button{
+  width: 100%;
+}
+.card-figcaption-body input {
+  vertical-align:middle;
+}
+button#add_to_cart {
+  border-color: stencilColor('button--primary-backgroundColor');
+  background-color: stencilColor('button--primary-backgroundColor');
+}
+.navPages-list:not(.navPages-list-depth-max) .navPage-subMenu-action {
+  padding: 0;
+}
+.sale-rep-user-info {
+  background-color: stencilColor('navUser-dropdown-backgroundColor') !important;
+}
+#sale-rep-table tbody tr:nth-child(even) {
+  background-color: stencilColor('navUser-dropdown-backgroundColor');
+}
+.form-container.slideInRight  {
+  background-color: stencilColor('container-border-global-color-base')!important;
+}
+.bottom-cart-container {
+    z-index: 1000!important;
+    .bottom-cart-inner {
+        width: 50%;
+        margin: 0 auto;
+        
+    }
+}
+
+
