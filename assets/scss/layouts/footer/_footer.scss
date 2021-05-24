@@ -293,7 +293,7 @@
 }
 
 .footer-signup {
-    background: url('../assets/img/Footer-Flowers-Mobile.png') bottom left no-repeat $color-graygreen;
+    background: url('../img/Footer-Flowers-Mobile.png') bottom left no-repeat $color-graygreen;
     text-align: center;
     color: $color-lighttext;
     padding: 60px 20px;
@@ -400,7 +400,7 @@
       
 
     @include breakpoint("medium") {
-        background: url('/assets/img/Footer-Flowers.png') bottom center no-repeat $color-graygreen;
+        background: url('../img/Footer-Flowers.png') bottom center no-repeat $color-graygreen;
         padding: 60px 40px;
         background-size: cover;
 
