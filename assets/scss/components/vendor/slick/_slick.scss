@@ -15,23 +15,29 @@
 // 2. Prevent screen flicker when CSS transition is applied
 //
 // -----------------------------------------------------------------------------
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
 
 .slick-next,
 .slick-prev {
     @include carouselOpaqueBackgrounds($slick-arrow-bgColor);
     z-index: 1;
     border: 1px solid $slick-arrow-borderColor;
-    height: remCalc(61px);
+    //   height: remCalc(61px);
+    height: remCalc(40px);
     margin-top: -(remCalc(15px));
     padding: remCalc(10px);
     width: remCalc(40px);
+    border-radius: 50%;
 
     &::before {
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: 100%;
         display: block;
-        height: remCalc(41px);
+        //height: remCalc(41px);
+        height: remCalc(20px);
         width: remCalc(20px);
     }
 
@@ -53,6 +59,7 @@
 
     &::before {
         @include carousel-arrow-color( $slick-arrow-color, 'next')
+        margin-left: -3px;
     }
 
     &:hover {
@@ -72,6 +79,7 @@
 
     &::before {
         @include carousel-arrow-color( $slick-arrow-color, 'prev')
+        margin-left: 2px;
     }
 
     &:hover {
@@ -121,6 +129,7 @@
             position: relative;
             text-align: center;
             vertical-align: middle;
+            background: #FFFFFF;
 
             &:hover {
                 &::before {
@@ -139,7 +148,8 @@
         &.slick-active {
             // scss-lint:disable NestingDepth
             button::before {
-                background: $slick-dot-color-active;
+                //background: $slick-dot-color-active;
+                background: $color-graygreen;
             }
         }
     }

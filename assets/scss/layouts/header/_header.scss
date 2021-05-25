@@ -400,3 +400,8 @@
          top: 0;
     }
 }
+
+// HIDING "Trade Professional Application" from the header, where it is jacked in via Bundleb2b script
+.c0029  {
+    display: none;
+}

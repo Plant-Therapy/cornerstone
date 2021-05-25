@@ -9,6 +9,7 @@
 body {
     font-size: $body-fontSize;
     font-weight: $body-font-weight;
+    font-family: $font-Nunito;
 }
 
 h1,
@@ -19,6 +20,7 @@ h5,
 h6 {
     font-weight: $header-font-weight;
     margin-top: $heading-marginTop;
+    font-family: $font-Marcellus;
 }
 
 h5,

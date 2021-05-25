@@ -25,11 +25,11 @@
 
     &.slick-initialized {
         @include breakpoint("small") {
-            max-height: remCalc(400px);            
+            //max-height: remCalc(400px);            
         }
 
         @include breakpoint("medium") {
-            max-height: remCalc(600px);            
+            //max-height: remCalc(600px);            
         }
     }
 
@@ -72,7 +72,8 @@
 
         // scss-lint:disable SelectorDepth, NestingDepth
         li {
-            @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            //@include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            
         }
     }
 

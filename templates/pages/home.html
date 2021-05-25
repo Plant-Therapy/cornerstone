@@ -14,9 +14,55 @@ blog:
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
     {{#and carousel carousel.slides.length}}
-        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+        {{> components/carousel-pt arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
     {{/and}}
     {{{region name="home_below_carousel"}}}
+    <div class="homepage--planting-kindess-ticker">
+        <p><span>$36,123.23</span> donated to local and world-wide organizations in need. Learn More about <a href="#">Planting Kindness</a>.</p>
+        
+    </div>
+    <div class="homepage--body-category-nav">
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-essentialoils.svg'}}" alt="Essential Oils">
+            </span>
+            Essential Oils
+        </a>
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-cbd.svg'}}" alt="CBD">
+            </span>
+            CBD
+        </a>
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-bodycare.svg'}}" alt="Body Care">
+            </span>
+            Body Care
+        </a>
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-household.svg'}}" alt="Household">
+            </span>
+            Household
+        </a>
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-bodycare.svg'}}" alt="Pup & Pony">
+            </span>
+            Pup & Pony
+        </a>
+        <a href="#">
+            <span>
+                <img src="{{cdn 'icons/icon-home-seasonal.svg'}}" alt="Seasonal">
+            </span>
+            Seasonal
+        </a>
+    </div>
+{{/partial}}
+
+{{#partial "home-body"}}
+<div style="background-color: aqua;">TEST</div>
 {{/partial}}
 
 {{#partial "page"}}

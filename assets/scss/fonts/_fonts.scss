@@ -7,6 +7,6 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
     @include clear-sans;
 }
 
-$font-Nunito:       'Nunito', sans-serif;
+$font-Nunito:       'Nunito', 'Clear Sans', arial, sans-serif;
 $font-Marcellus:    'Marcellus', serif;
 $font-fontawesome:  'Font Awesome 5 Free';

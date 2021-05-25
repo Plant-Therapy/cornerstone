@@ -10,7 +10,8 @@
 
 .body {
     margin-bottom: spacing("double") * 2;
-    margin-top: spacing("single"); // 1
+    //margin-top: spacing("single"); // 1
+    margin-top: 4.1rem;
 
     @include breakpoint("medium") {
         margin-top: spacing("single") + spacing("base"); // 1
@@ -52,6 +53,76 @@
 
         + .page-content {
             @include grid-column(9);
+        }
+    }
+}
+
+.homepage--planting-kindess-ticker {
+    min-height: 50px;
+    background-color: $color-ptlightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px;
+    text-align: center;
+    p {
+        margin-bottom: 0;
+        span, a {
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+    }
+}
+.homepage--body-category-nav {
+    background: $color-pttan;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 50px;
+    text-align: center;
+    flex-wrap: wrap;
+    a {
+        width: 90px;
+        text-decoration: none;
+        margin: 15px 1vw;
+        span {
+            height: 60px;
+            width: 60px;
+            padding: 10px;
+            margin: 10px auto 15px;
+            border: 1px solid $color-ptgreen;
+            border-radius: 50%;
+            display: block;
+            background-color: #FFF;
+        }
+        &:hover {
+            color: $color-ptred;
+            span {
+                border-color: $color-ptred;
+            }
+        }
+    }
+
+    @include breakpoint("medium") {
+        justify-content: space-evenly;
+        a {
+            text-align: center;
+            display: block;
+            width: 120px;
+
+       
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 15px;
+                height: 118px;
+                width: 118px;
+
+            }
+
         }
     }
 }
