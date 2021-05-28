@@ -57,6 +57,10 @@
     }
 }
 
+
+//-----------------
+// Home Page Custom SCSS
+//-----------------
 .homepage--planting-kindess-ticker {
     min-height: 50px;
     background-color: $color-ptlightblue;
@@ -124,5 +128,53 @@
             }
 
         }
+    }
+}
+
+.homepage--featured {
+    h2 {
+        font-size: 38px;
+        text-align: center;
+        
+    }
+}
+.tabs {
+    &.home-products {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        border-bottom: 0;
+        
+        li.tab {
+           background-color: $color-pttan;
+           padding: 0 20px;
+           a {
+               color: $color-graygreen;
+           }
+           &:first-child {
+               border-radius: 22px 0 0 22px;
+           }
+           &:last-child {
+                border-radius: 0 22px 22px 0;
+           }
+           &.is-active {
+               border: 0;
+               background-color: $color-graygreen;
+               border-radius: 22px;
+         
+               a {
+                   color: #FFF;
+                   font-weight: 400;
+               }
+           }
+        }
+    }
+}
+.tab-content {
+    .page-heading {
+        display: none;
+    }
+    .slick-next, .slick-prev {
+        border-color: $color-ptgreen;
     }
 }

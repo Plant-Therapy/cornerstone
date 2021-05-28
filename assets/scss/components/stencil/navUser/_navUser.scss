@@ -121,7 +121,8 @@
 
     svg {
         fill: stencilColor("navUser-color");
-        stroke: stencilColor("navUser-color");
+        //stroke: stencilColor("navUser-color");
+        stroke: $color-graygreen;
         transition: all 0.15s ease;
     }
 }
@@ -211,6 +212,17 @@
         img {
             margin: 0 1px;
         }
+        svg {
+            width: 21px;
+            margin-top: 10px;
+            fill: none;
+        }
+        &:hover {
+
+            svg {
+                stroke: $color-ptgreen;
+            }
+        }
     }
 
     .dropdown-menu {
@@ -283,6 +295,17 @@
         line-height: 40px;
         text-align: center;
         border-radius: 50%;
+        svg {
+            width: 24px;
+            margin-top: 10px;
+            fill: none;
+        }
+        &:hover {
+
+            svg {
+                stroke: $color-ptgreen;
+            }
+        }
     }
 }
 .navUser-item--wishlist {
@@ -298,6 +321,18 @@
         line-height: 40px;
         text-align: center;
         border-radius: 50%;
+        svg {
+            width: 24px;
+            margin-top: 10px;
+            fill: none;
+        }
+        &:hover {
+            svg {
+                fill: $color-ptred;
+                stroke: $color-ptred;
+            }
+            
+        }
     }
 }
 

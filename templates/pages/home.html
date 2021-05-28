@@ -61,8 +61,8 @@ blog:
     </div>
 {{/partial}}
 
-{{#partial "home-body"}}
-<div style="background-color: aqua;">TEST</div>
+{{#partial "fullwidth-above"}}
+Add Full width home page content here
 {{/partial}}
 
 {{#partial "page"}}
@@ -72,20 +72,42 @@ blog:
     {{/each}}
 
 <div class="main full">
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
+    <div class="homepage--featured">
+    <h2>Products You'll Love</h2>
+    <ul class="tabs home-products" data-tabs id="example-tabs" data-tab role="tablist">
+        <li class="tab is-active" role="presentation"><a href="#panel1" class="tab-title" aria-selected="true">New Products</a></li>
+        <li class="tab" role="presentation"><a data-tabs-target="panel2" href="#panel2" class="tab-title">Best Sellers</a></li>
+        <li class="tab" role="presentation"><a data-tabs-target="panel3" href="#panel3" class="tab-title">Our Favs</a></li>
+      </ul>
+      <div class="tabs-contents" data-tabs-content="example-tabs" role="tabpanel">
+        <div class="tab-content is-active" id="panel1">
+        {{#if products.new}}
+            {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        {{/if}}
+        </div>
+        <div class="tab-content" id="panel2" role="tabpanel">
+        {{#if products.top_sellers}}
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{/if}}        </div>
+        <div class="tab-content" id="panel3" role="tabpanel">
+        {{#if products.featured}}
+            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        {{/if}}          </div>
+      </div>
+
+    </div>
     {{{region name="home_below_featured_products"}}}
 
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
+
     {{{region name="home_below_top_products"}}}
 
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
+
     {{{region name="home_below_new_products"}}}
 </div>
 {{/partial}}
+
+{{#partial "fullwidth-below"}}
+Add Full width home page content here
+{{/partial}}
+
 {{> layout/base}}
