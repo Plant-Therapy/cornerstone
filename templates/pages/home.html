@@ -62,7 +62,9 @@ blog:
 {{/partial}}
 
 {{#partial "fullwidth-above"}}
-Add Full width home page content here
+
+<!--Add Full width home page content here-->
+
 {{/partial}}
 
 {{#partial "page"}}
@@ -84,30 +86,117 @@ Add Full width home page content here
         {{#if products.new}}
             {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
         {{/if}}
+        {{{region name="home_below_new_products"}}}
         </div>
         <div class="tab-content" id="panel2" role="tabpanel">
         {{#if products.top_sellers}}
             {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-        {{/if}}        </div>
+        {{/if}}        
+        {{{region name="home_below_top_products"}}}
+    </div>
         <div class="tab-content" id="panel3" role="tabpanel">
         {{#if products.featured}}
             {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-        {{/if}}          </div>
+        {{/if}}          
+        {{{region name="home_below_featured_products"}}}
+    </div>
       </div>
 
     </div>
-    {{{region name="home_below_featured_products"}}}
+    
 
 
-    {{{region name="home_below_top_products"}}}
+
+    
 
 
-    {{{region name="home_below_new_products"}}}
+    
 </div>
 {{/partial}}
 
 {{#partial "fullwidth-below"}}
-Add Full width home page content here
+<div class="homepage--ingredients">
+
+    <img src="//cdn.planttherapy.com/images/web/BC/homepage/Ingredients-FPO.jpg" alt="girl with flowers">
+</div>
+
+<div class="homepage--rewards">
+    <div class="container">
+        <div class="content">
+        <img src="//cdn.planttherapy.com/images/web/BC/homepage/pt-rewards-logo.png" alt="Plant Therapy Rewards">
+        <span>Buy Products. Earn Points. Get Rewarded.</span>
+    </div>
+        <a href="#" class="button secondary--cta_light">Join Now</a>
+    </div>
+
+
+
+</div>
+
+<div class="homepage--reviews">
+    <h2>What Others are Saying</h2>
+    <p>Content coming from Yotpo</p>
+
+</div>
+
+
+<div class="container">
+    <div class="homepage--promotion">
+        <div class="homepage--promotion-left">
+            <img src="////cdn.planttherapy.com/images/web/BC/homepage/home-ootm.png" alt="oil of the month">
+            <h3>Join the OOTM Club</h3>
+            <p>Get exclusive monthly surprises right at your door!</p>
+
+            <a href="#" class="button secondary--cta_light">Shop Now</a><br>
+
+        </div>
+        <div class="homepage--promotion-right">
+            <div class="promo-content">
+                <h3>Become a member!</h3>
+                <p>You'll receive a 25% monthly discount, making your price only $15.00 per month.</p>
+                <a href="#" class="button secondary--cta_light">Shop Now</a><br>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="homepage--about">
+    <div class="container">
+    <div class="row about">
+        <div>
+            <img src="//cdn.planttherapy.com/images/web/BC/homepage/homepage-about-featured.png" alt="girl with flowers">
+        </div>
+        <div class="content">
+            <h2>About Plant Therapy</h2>
+            <p>Founded in 2011, our mission is to bring you natural living options at an affordable price. Our people-first
+                promise keeps our customers, employees, and community at the heart of everything we do. We've grown to be a
+                trusted place to shop essential oils, CBD, body care, and household items. Over 10 years later, there are some
+                fresh faces on our team and new products on the shelf, but we're the same awesome team dedicated to bringing you
+                the best natural living has to offer.</p>
+                <a href="#" class="button secondary--cta_light">Our Story</a>
+        </div>
+    </div>
+    <div class="row reverse">
+        <div>
+            <img src="//cdn.planttherapy.com/images/web/BC/homepage/homepage-plantingkindness-placeholder.png" alt="planting kindness">
+        </div>
+        <div class="content">
+            <h2><span>How We Give Back</span>Planting Kindness</h2>
+            <p>Our goal is to have the greatest possible impact on as many people as we can, whether it’s our customers,
+                employees, someone in our community, or around the world, we do what we can to help. Because of you, we are
+                grateful to be in a position to share with the community we love. Our philanthropy program, Planting Kindness,
+                is dedicated to making the world around us a better place. </p>
+            <a href="#" class="button secondary--cta_light">Our Efforts</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
 {{/partial}}
 
 {{> layout/base}}

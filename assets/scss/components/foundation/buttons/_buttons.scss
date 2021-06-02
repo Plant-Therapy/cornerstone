@@ -25,3 +25,213 @@
         fill: stencilColor("button--icon-svg-color");
     }
 }
+
+.button {
+    &.primary--cta {
+        min-width: 240px;
+        height: 48px;
+        text-transform: uppercase;
+        border-radius: 24px;
+        border: 0;
+        //display: flex;
+        //justify-content: center;
+        //align-items: center;
+        font-weight: 700;
+        line-height: 48px;
+        padding: 0 20px;
+
+        // display: inline-block;
+        // vertical-align: middle;
+        // -webkit-transform: perspective(1px) translateZ(0);
+        // transform: perspective(1px) translateZ(0);
+        // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        // position: relative;
+        // -webkit-transition-property: color;
+        // transition-property: color;
+        // -webkit-transition-duration: 0.3s;
+        // transition-duration: 0.3s;
+
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+        background: #e1e1e1;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+
+        &:before {
+            // content: "";
+            // position: absolute;
+            // z-index: -1;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
+            // border-radius: 24px;
+            // -webkit-transform: scaleX(0);
+            // transform: scaleX(0);
+            // -webkit-transform-origin: 0 50%;
+            // transform-origin: 0 50%;
+            // -webkit-transition-property: transform;
+            // transition-property: transform;
+            // -webkit-transition-duration: 0.2s;
+            // transition-duration: 0.2s;
+            // -webkit-transition-timing-function: ease-out;
+            // transition-timing-function: ease-out;
+
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            //background: #2098D1;
+            border-radius: 36px;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.2s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+          }
+          &:hover, &:focus, &:active {
+            //color: white;
+          }
+          &:hover:before, &:focus:before, &:active:before {
+            -webkit-transform: scaleX(2);
+            transform: scaleX(2);
+          }
+
+        &_solid {
+            @extend .primary--cta;
+            background-color: $color-ptgreen;
+
+            color: #FFF;
+            &:before {
+                background: $color-graygreen;
+            }
+            &:hover {
+                //background-color: $color-graygreen;
+            }
+
+        }&_light {
+            @extend .primary--cta;
+            background-color: #FFF;
+            color: $color-graygreen; 
+            border: 1px solid $color-ptgreen;
+            &:before {
+                background: $color-ptgreen;
+            }
+            &:hover {
+                //background-color: $color-ptgreen;
+                color:#FFF
+            }
+        }
+
+    }
+    &.secondary--cta {
+        min-width: 200px;
+        height: 40px;
+        text-transform: uppercase;
+        border-radius: 20px;
+        line-height: 40px;
+        padding: 0 20px;
+        border: 0;
+        color: $color-graygreen;
+        font-weight: 700;
+
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+        background: #e1e1e1;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+
+        &:before {
+            // content: "";
+            // position: absolute;
+            // z-index: -1;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
+            // border-radius: 24px;
+            // -webkit-transform: scaleX(0);
+            // transform: scaleX(0);
+            // -webkit-transform-origin: 0 50%;
+            // transform-origin: 0 50%;
+            // -webkit-transition-property: transform;
+            // transition-property: transform;
+            // -webkit-transition-duration: 0.2s;
+            // transition-duration: 0.2s;
+            // -webkit-transition-timing-function: ease-out;
+            // transition-timing-function: ease-out;
+
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            //background: #2098D1;
+            border-radius: 20px;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.2s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+          }
+          &:hover, &:focus, &:active {
+            //color: white;
+          }
+          &:hover:before, &:focus:before, &:active:before {
+            -webkit-transform: scaleX(2);
+            transform: scaleX(2);
+          }
+
+        &_solid {
+            @extend .secondary--cta;
+            background-color: $color-ptgreen;
+
+            color: #FFF;
+            &:before {
+                background: $color-graygreen;
+            }
+            &:hover {
+                //background-color: $color-graygreen;
+            }
+
+        }&_light {
+            @extend .secondary--cta;
+            background-color: #FFF;
+
+            color: $color-graygreen; 
+            border: 1px solid $color-ptgreen;
+            &:before {
+                background: $color-ptgreen;
+            }
+            &:hover {
+                //background-color: $color-ptgreen;
+                color:#FFF
+            }
+        }
+    }
+}

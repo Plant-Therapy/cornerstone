@@ -23,11 +23,12 @@
 .slick-prev {
     @include carouselOpaqueBackgrounds($slick-arrow-bgColor);
     z-index: 1;
-    border: 1px solid $slick-arrow-borderColor;
+    //border: 1px solid $slick-arrow-borderColor;
+    border: 1px solid $color-ptgreen;
     //   height: remCalc(61px);
     height: remCalc(40px);
     margin-top: -(remCalc(15px));
-    padding: remCalc(10px);
+    padding: remCalc(12px);
     width: remCalc(40px);
     border-radius: 50%;
 
@@ -37,13 +38,13 @@
         background-size: 100%;
         display: block;
         //height: remCalc(41px);
-        height: remCalc(20px);
-        width: remCalc(20px);
+        height: remCalc(14px);
+        width: remCalc(7px);
     }
 
     &:hover,
     &:focus {
-        @include carouselOpaqueBackgrounds($slick-arrow-bgColor); // 1
+        @include carouselOpaqueBackgrounds($color-ptgreen); // 1
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: 100%;
@@ -59,13 +60,13 @@
 
     &::before {
         @include carousel-arrow-color( $slick-arrow-color, 'next')
-        margin-left: -3px;
+        margin-left: 3px;
     }
 
     &:hover {
         // scss-lint:disable NestingDepth
         &::before {
-            @include carousel-arrow-color( $slick-arrow-color-hover, 'next')
+            @include carousel-arrow-color( #FFF, 'next')
         }
     }
 }
@@ -85,7 +86,7 @@
     &:hover {
         // scss-lint:disable NestingDepth
         &::before {
-            @include carousel-arrow-color( $slick-arrow-color-hover, 'prev')
+            @include carousel-arrow-color( #FFF, 'prev')
         }
     }
 }
