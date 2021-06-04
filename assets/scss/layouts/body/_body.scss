@@ -196,8 +196,9 @@
     }
      .ingredients__tabholder {
          position: relative;
-         width: 1400px;
-         margin-left: calc(50% - 700px);
+         overflow-x: hidden;
+         margin: 0 auto;
+         min-height: 800px;
          .tabs {
              border-bottom: 0;
          }
@@ -258,31 +259,31 @@
             }
             &.co {
                 top: 0px;
-                left: 35%;
+                left: calc(50% - 200px);
             }
             &.eo {
                 top: 0px;
-                left: 55%;
+                left: calc(50% + 50px);
             }
             &.oi {
                 top: 210px;
-                left: 67%;
+                left: calc(50% + 217px);
             }
             &.pi {
                 top: 210px;
-                left: 23%;
+                left: calc(50% - 378px);
             }
             &.ev {
-                top: 477px;
-                left: 25%;
+                top: 494px;
+                left: calc(50% - 325px);
             }
             &.bu {
-                top: 477px;
-                left: 64%;
+                top: 494px;
+                left: calc(50% + 174px);
             }
             &.be {
                 top: 615px;
-                left: 44.5%;
+                left: calc(50% - 78px);
             }
          }
          .tabs-contents {
