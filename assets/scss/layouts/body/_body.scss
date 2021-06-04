@@ -178,6 +178,142 @@
         border-color: $color-ptgreen;
     }
 }
+
+.homepage--ingredients {
+    text-align: center;
+    background: url('//cdn.planttherapy.com/images/web/BC/homepage/homepage-ingredients-bg-desktop.png') top center no-repeat $color-pttan;
+    background-size: cover;
+    padding: 50px 20px 80px;
+    min-height: 1110px;
+    margin-top: 80px;
+    h2 {
+        font-size: 38px;
+    }
+    p {
+        max-width: 700px;
+        margin: 20px auto;
+        font-size: 1.3rem;
+    }
+     .ingredients__tabholder {
+         position: relative;
+         .tabs {
+             border-bottom: 0;
+         }
+         .tab {
+            position: absolute;
+            border: 0;
+            a {
+                width: 90px;
+                text-decoration: none;
+                margin: 15px 1vw;
+                border:0;
+                span {
+                    height: 60px;
+                    width: 60px;
+                    padding: 10px;
+                    margin: 10px auto 15px;
+                    border: 1px solid $color-ptgreen;
+                    border-radius: 50%;
+                    display: block;
+                    background-color: #FFF;
+                }
+                &:hover  {
+                    color: $color-ptred;
+                    span {
+                        border-color: $color-ptred;
+                    }
+                }
+
+            }
+            &.is-active {
+                a {
+                    color: $color-ptred;
+                    span {
+                        border-color: $color-ptred;
+                    }
+                }
+            }
+
+            @include breakpoint("medium") {
+
+                a {
+                    text-align: center;
+                    display: block;
+                    width: 120px;
+        
+               
+                    span {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        height: 118px;
+                        width: 118px;
+        
+                    }
+        
+                }
+            }
+            &.co {
+                top: 0px;
+                left: 35%;
+            }
+            &.eo {
+                top: 0px;
+                left: 55%;
+            }
+            &.oi {
+                top: 210px;
+                left: 67%;
+            }
+            &.pi {
+                top: 210px;
+                left: 23%;
+            }
+            &.ev {
+                top: 477px;
+                left: 25%;
+            }
+            &.bu {
+                top: 477px;
+                left: 64%;
+            }
+            &.be {
+                top: 615px;
+                left: 44.5%;
+            }
+         }
+         .tabs-contents {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             margin-top: 180px;
+             
+         }
+        .tab-content {
+            height: 420px;
+            width: 420px;
+            background-color: $color-pt-peach;
+            border-radius: 50%;
+            padding-top: 50px;
+
+            img {
+                background: #FFF;
+                border-radius: 50%;
+                height: 80px;
+                width: 80px;
+                padding: 10px;
+                
+            }
+            p {
+                font-size: 13px;
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+
 .homepage--rewards {
     background: $color-graygreen;
     display: flex;

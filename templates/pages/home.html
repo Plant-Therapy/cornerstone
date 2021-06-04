@@ -75,49 +75,155 @@ blog:
 
 <div class="main full">
     <div class="homepage--featured">
-    <h2>Products You'll Love</h2>
-    <ul class="tabs home-products" data-tabs id="example-tabs" data-tab role="tablist">
-        <li class="tab is-active" role="presentation"><a href="#panel1" class="tab-title" aria-selected="true">New Products</a></li>
-        <li class="tab" role="presentation"><a data-tabs-target="panel2" href="#panel2" class="tab-title">Best Sellers</a></li>
-        <li class="tab" role="presentation"><a data-tabs-target="panel3" href="#panel3" class="tab-title">Our Favs</a></li>
-      </ul>
-      <div class="tabs-contents" data-tabs-content="example-tabs" role="tabpanel">
-        <div class="tab-content is-active" id="panel1">
-        {{#if products.new}}
-            {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-        {{/if}}
-        {{{region name="home_below_new_products"}}}
+        <h2>Products You'll Love</h2>
+        <ul class="tabs home-products" data-tabs id="example-tabs" data-tab role="tablist">
+            <li class="tab is-active" role="presentation"><a href="#panel1" class="tab-title" aria-selected="true">New
+                    Products</a></li>
+            <li class="tab" role="presentation"><a data-tabs-target="panel2" href="#panel2" class="tab-title">Best
+                    Sellers</a></li>
+            <li class="tab" role="presentation"><a data-tabs-target="panel3" href="#panel3" class="tab-title">Our
+                    Favs</a></li>
+        </ul>
+        <div class="tabs-contents" data-tabs-content="example-tabs" role="tabpanel">
+            <div class="tab-content is-active" id="panel1">
+                {{#if products.new}}
+                {{> components/products/new products=products.new
+                columns=theme_settings.homepage_new_products_column_count}}
+                {{/if}}
+                {{{region name="home_below_new_products"}}}
+            </div>
+            <div class="tab-content" id="panel2" role="tabpanel">
+                {{#if products.top_sellers}}
+                {{> components/products/top products=products.top_sellers
+                columns=theme_settings.homepage_top_products_column_count}}
+                {{/if}}
+                {{{region name="home_below_top_products"}}}
+            </div>
+            <div class="tab-content" id="panel3" role="tabpanel">
+                {{#if products.featured}}
+                {{> components/products/featured products=products.featured
+                columns=theme_settings.homepage_featured_products_column_count}}
+                {{/if}}
+                {{{region name="home_below_featured_products"}}}
+            </div>
         </div>
-        <div class="tab-content" id="panel2" role="tabpanel">
-        {{#if products.top_sellers}}
-            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-        {{/if}}        
-        {{{region name="home_below_top_products"}}}
-    </div>
-        <div class="tab-content" id="panel3" role="tabpanel">
-        {{#if products.featured}}
-            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-        {{/if}}          
-        {{{region name="home_below_featured_products"}}}
-    </div>
-      </div>
 
     </div>
-    
 
 
 
-    
 
 
-    
+
+
+
 </div>
 {{/partial}}
 
 {{#partial "fullwidth-below"}}
 <div class="homepage--ingredients">
+    <h2>Feel Your Best with the Best</h2>
+    <p>We like to keep things clean! And so each ingredient we use is thoughtfully chosen, rigorously tested, and
+        expertly formulated to create only the highest quality  natural products for you and your family.</p>
+        <div class="container ingredients__tabholder">
 
-    <img src="//cdn.planttherapy.com/images/web/BC/homepage/Ingredients-FPO.jpg" alt="girl with flowers">
+            <ul class="tabs home-ingredients" data-tabs id="ingredient-tabs" data-tab role="tablist">
+                <li class="tab is-active co" role="presentation"><a href="#panel-co" class="" aria-selected="true">
+                        <span>
+                            <img src="{{cdn 'icons/icon-home-carrier-oils.svg'}}" alt="Carrier Oils">
+                        </span>
+                        Carrier Oils</a>
+                    </li>
+                <li class="tab eo" role="presentation"><a data-tabs-target="panel-eo" href="#panel-eo" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-essential-oils.svg'}}" alt="Essential Oils">
+                    </span>
+                    Essential Oils</a>
+                </li>
+                <li class="tab oi" role="presentation"><a data-tabs-target="panel-oi" href="#panel-oi" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-organic-ingredients.svg'}}" alt="Organic Ingredients">
+                    </span>
+                    Organic Ingredients</a></li>
+                <li class="tab bu" role="presentation"><a data-tabs-target="panel-bu" href="#panel-bu" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-butters.svg'}}" alt="Butters">
+                    </span>
+                    Butters</a></li>
+                <li class="tab be" role="presentation"><a data-tabs-target="panel-be" href="#panel-be" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-botanical-extracts.svg'}}" alt="Botanical Extracts">
+                    </span>
+                    Botanical
+                        Extracts</a></li>
+                <li class="tab ev" role="presentation"><a data-tabs-target="panel-ev" href="#panel-ev" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-essential-vitamins.svg'}}" alt="Essential Vitamins">
+                    </span>
+                    Essential
+                        Vitamins</a></li>
+                <li class="tab pi" role="presentation"><a data-tabs-target="panel-pi" href="#panel-pi" class="">
+                    <span>
+                        <img src="{{cdn 'icons/icon-home-protective-ingredients.svg'}}" alt="Protective Ingredients">
+                    </span>
+                    Protective
+                        Ingredients</a></li>
+            </ul>
+            <div class="tabs-contents" data-tabs-content="ingredient-tabs" role="tabpanel">
+                <div class="tab-content is-active" id="panel-co">
+                    <img src="{{cdn 'icons/icon-home-carrier-oils.svg'}}" alt="Carrier Oils">
+                    <h3>Carrier Oils</h3>
+                    <p>Naturally occurring phytochemicals, botanical extracts bring unique therapeutic benefits that work in harmony with the other ingredients to enhance the effect.</p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-eo" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-essential-oils.svg'}}" alt="Essential Oils">
+                    <h3>Essential Oils</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-oi" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-organic-ingredients.svg'}}" alt="Organic Ingredients">
+                    <h3>Organic Ingredients</h3>
+                    <p>Lorem ipsum tempor incididunt ut labore et dolore magna aliqua sit amet, consectetur adipiscing elit, sed do eiusmod. Ut enim ad minim veniam, quis nostrud. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-bu" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-butters.svg'}}" alt="Butters">
+                    <h3>Butters</h3>
+                    <p>Lorem ipsum Ut enim ad minim veniam, quis nostrud incididunt ut labore et dolore magna aliqua sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-be" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-botanical-extracts.svg'}}" alt="Botanical Extracts">
+                    <h3>Botanical Extracts</h3>
+                    <p>Lorem ipsum consectetur adipiscing elit, Ut enim ad minim veniam, quis nostrud incididunt ut labore et dolore magna aliqua sit amet, sed do eiusmod. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-ev" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-essential-vitamins.svg'}}" alt="Essential Vitamins">
+                    <h3>Essential Vitamins</h3>
+                    <p>Lorem ipsum labore et dolore magna aliqua sit amet, consectetur adipiscing elit, Ut enim ad minim veniam, quis nostrud incididunt ut sed do eiusmod. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+                <div class="tab-content" id="panel-pi" role="tabpanel">
+                    <img src="{{cdn 'icons/icon-home-protective-ingredients.svg'}}" alt="Protective Ingredients">
+                    <h3>Protective Ingredients</h3>
+                    <p>Lorem ipsum minim veniam, quis nostrud incididunt labore et dolore magna aliqua sit amet, consectetur adipiscing elit, Ut enim ad  ut sed do eiusmod. </p>
+
+                    <a href="#" class="button secondary--cta_light">Shop Now</a>
+                </div>
+    
+            </div>
+        </div>
+
+
 </div>
 
 <div class="homepage--rewards">
