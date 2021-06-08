@@ -125,6 +125,10 @@ blog:
     <h2>Feel Your Best with the Best</h2>
     <p>We like to keep things clean! And so each ingredient we use is thoughtfully chosen, rigorously tested, and
         expertly formulated to create only the highest quality  natural products for you and your family.</p>
+        <div class="ingredient-scroller"> 
+            <button id="slideLeft" type="button" class="slick-prev slick-arrow">Slide left</button>
+            <button id="slideRight" type="button" class="slick-next">Slide right</button>
+        </div>
         <div class=" ingredients__tabholder">
 
             <ul class="tabs home-ingredients" data-tabs id="ingredient-tabs" data-tab role="tablist">
@@ -132,42 +136,42 @@ blog:
                         <span>
                             <img src="{{cdn 'icons/icon-home-carrier-oils.svg'}}" alt="Carrier Oils">
                         </span>
-                        Carrier Oils</a>
+                        <i>Carrier Oils</i></a>
                     </li>
                 <li class="tab eo" role="presentation"><a data-tabs-target="panel-eo" href="#panel-eo" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-essential-oils.svg'}}" alt="Essential Oils">
                     </span>
-                    Essential Oils</a>
+                    <i>Essential Oils</i></a>
                 </li>
                 <li class="tab oi" role="presentation"><a data-tabs-target="panel-oi" href="#panel-oi" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-organic-ingredients.svg'}}" alt="Organic Ingredients">
                     </span>
-                    Organic Ingredients</a></li>
+                    <i>Organic Ingredients</i></a></li>
                 <li class="tab bu" role="presentation"><a data-tabs-target="panel-bu" href="#panel-bu" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-butters.svg'}}" alt="Butters">
                     </span>
-                    Butters</a></li>
+                    <i>Butters</i></a></li>
                 <li class="tab be" role="presentation"><a data-tabs-target="panel-be" href="#panel-be" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-botanical-extracts.svg'}}" alt="Botanical Extracts">
                     </span>
-                    Botanical
-                        Extracts</a></li>
+                    <i>Botanical
+                        Extracts</i></a></li>
                 <li class="tab ev" role="presentation"><a data-tabs-target="panel-ev" href="#panel-ev" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-essential-vitamins.svg'}}" alt="Essential Vitamins">
                     </span>
-                    Essential
-                        Vitamins</a></li>
+                    <i>Essential
+                        Vitamins</i></a></li>
                 <li class="tab pi" role="presentation"><a data-tabs-target="panel-pi" href="#panel-pi" class="">
                     <span>
                         <img src="{{cdn 'icons/icon-home-protective-ingredients.svg'}}" alt="Protective Ingredients">
                     </span>
-                    Protective
-                        Ingredients</a></li>
+                    <i>Protective
+                        Ingredients</i></a></li>
             </ul>
             <div class="tabs-contents" data-tabs-content="ingredient-tabs" role="tabpanel">
                 <div class="tab-content is-active" id="panel-co">
@@ -306,3 +310,32 @@ blog:
 {{/partial}}
 
 {{> layout/base}}
+
+<script>
+var button = document.getElementById('slideRight');
+button.onclick = function () {
+    var container = document.getElementById('ingredient-tabs');
+    sideScroll(container,'right',20,140,10);
+};
+
+var back = document.getElementById('slideLeft');
+back.onclick = function () {
+    var container = document.getElementById('ingredient-tabs');
+    sideScroll(container,'left',20,140,10);
+};
+
+function sideScroll(element,direction,speed,distance,step){
+    scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+</script>

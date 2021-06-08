@@ -181,11 +181,16 @@
 
 .homepage--ingredients {
     text-align: center;
-    background: url('//cdn.planttherapy.com/images/web/BC/homepage/homepage-ingredients-bg-desktop.png') top center no-repeat $color-pttan;
+    background: url('//cdn.planttherapy.com/images/web/BC/homepage/homepage-ingredients-bg-mobile.png') bottom center no-repeat $color-pttan;
     background-size: cover;
     padding: 50px 20px 80px;
-    min-height: 1110px;
+    
     margin-top: 80px;
+    @include breakpoint("medium") {
+        background: url('//cdn.planttherapy.com/images/web/BC/homepage/homepage-ingredients-bg-desktop.png') top center no-repeat $color-pttan;
+        background-size: cover;
+        min-height: 1110px;
+    }
     h2 {
         font-size: 38px;
     }
@@ -194,25 +199,59 @@
         margin: 20px auto;
         font-size: 1.3rem;
     }
+    .ingredient-scroller {
+        position: relative;
+        .slick-next, .slick-prev {
+            top: 40px;
+        }
+        @include breakpoint("medium") {
+            display: none;
+        }
+    }
      .ingredients__tabholder {
          position: relative;
          overflow-x: hidden;
          margin: 0 auto;
-         min-height: 800px;
+         padding-top:40px;
+         
+         @include breakpoint("medium") {
+            min-height: 800px;
+            padding-top: 0;
+        }
+
          .tabs {
              border-bottom: 0;
+             display: flex;
+             flex-wrap: nowrap;
+             //justify-content: center;
+             //align-items: stretch;
+             overflow: auto;
+             white-space: nowrap;
+             margin: 0;
+     
+             @include breakpoint("medium") {
+                display: block;
+                overflow: hidden;
+            }
          }
          .tab {
-            position: absolute;
+            
             border: 0;
+            width: 90px;
+            margin: 0 10px;
             a {
-                width: 90px;
+                display: block;
                 text-decoration: none;
-                margin: 15px 1vw;
+                margin: 15px;
                 border:0;
+                text-align: center;
+                i {
+                    display: none;
+                }
+                
                 span {
-                    height: 60px;
-                    width: 60px;
+                    height: 90px;
+                    width: 90px;
                     padding: 10px;
                     margin: 10px auto 15px;
                     border: 1px solid $color-ptgreen;
@@ -238,12 +277,15 @@
             }
 
             @include breakpoint("medium") {
-
+                position: absolute;
                 a {
                     text-align: center;
                     display: block;
                     width: 120px;
-        
+                    i {
+                        display: block;
+                        font-style: normal;
+                    }
                
                     span {
                         display: flex;
@@ -256,49 +298,56 @@
                     }
         
                 }
+                &.co {
+                    top: 0px;
+                    left: calc(50% - 200px);
+                }
+                &.eo {
+                    top: 0px;
+                    left: calc(50% + 50px);
+                }
+                &.oi {
+                    top: 210px;
+                    left: calc(50% + 217px);
+                }
+                &.pi {
+                    top: 210px;
+                    left: calc(50% - 378px);
+                }
+                &.ev {
+                    top: 494px;
+                    left: calc(50% - 325px);
+                }
+                &.bu {
+                    top: 494px;
+                    left: calc(50% + 174px);
+                }
+                &.be {
+                    top: 615px;
+                    left: calc(50% - 78px);
+                }
             }
-            &.co {
-                top: 0px;
-                left: calc(50% - 200px);
-            }
-            &.eo {
-                top: 0px;
-                left: calc(50% + 50px);
-            }
-            &.oi {
-                top: 210px;
-                left: calc(50% + 217px);
-            }
-            &.pi {
-                top: 210px;
-                left: calc(50% - 378px);
-            }
-            &.ev {
-                top: 494px;
-                left: calc(50% - 325px);
-            }
-            &.bu {
-                top: 494px;
-                left: calc(50% + 174px);
-            }
-            &.be {
-                top: 615px;
-                left: calc(50% - 78px);
-            }
+
          }
          .tabs-contents {
              display: flex;
              justify-content: center;
              align-items: center;
-             margin-top: 180px;
+             
+             @include breakpoint("medium") {
+                margin-top: 180px;
+             }
              
          }
+         
         .tab-content {
             height: 420px;
             width: 420px;
             background-color: $color-pt-peach;
             border-radius: 50%;
-            padding-top: 50px;
+            padding-top: 110px;
+            margin-top: -135px;
+            
 
             img {
                 background: #FFF;
@@ -306,11 +355,19 @@
                 height: 80px;
                 width: 80px;
                 padding: 10px;
+                display:none;
                 
             }
             p {
                 font-size: 13px;
                 max-width: 300px;
+            }
+            @include breakpoint("medium") {
+                padding-top: 50px;
+                margin-top: 0;
+                img {
+                    display: inline;
+                }
             }
         }
     }
