@@ -253,11 +253,15 @@
                     height: 90px;
                     width: 90px;
                     padding: 10px;
-                    margin: 10px auto 15px;
+                    //margin: 10px auto 15px;
                     border: 1px solid $color-ptgreen;
                     border-radius: 50%;
                     display: block;
                     background-color: #FFF;
+                    img {
+                        height: 50px;
+                        margin-top: 10px;
+                    }
                 }
                 &:hover  {
                     color: $color-ptred;
@@ -285,6 +289,7 @@
                     i {
                         display: block;
                         font-style: normal;
+                        white-space: normal;
                     }
                
                     span {
@@ -294,7 +299,9 @@
                         margin-bottom: 15px;
                         height: 118px;
                         width: 118px;
-        
+                        img {
+                            height: auto;
+                        }
                     }
         
                 }

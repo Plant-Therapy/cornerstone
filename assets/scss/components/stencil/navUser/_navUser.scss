@@ -90,8 +90,14 @@
 .navUser-section {
     @include breakpoint("medium") {
         position: relative; // 7
+        display: flex;
+        align-items: center;
+    }
+    .icons {
+        display: flex;
     }
 }
+
 
 .navUser-action {
     color: stencilColor("navUser-color");
@@ -101,7 +107,9 @@
     text-decoration: none;
     text-transform: uppercase;
     margin: 0 10px;
-
+    @media  (min-width: 801px) and (max-width: 1040px) {
+        margin: 0;
+    }
     &:hover,
     &.is-open {
         color: stencilColor("navUser-color-hover");
