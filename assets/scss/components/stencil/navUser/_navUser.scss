@@ -193,6 +193,7 @@
 
 .navUser-item--cart {
     display: block;
+    padding-right: 5px;
 
     // removing cart link for small screens when quantity is 0
     &__hidden-s {

@@ -144,12 +144,28 @@
         display: flex;
         justify-content: center;
         border-bottom: 0;
+        padding:5px;
+        background-color: $color-pttan;
+        border-radius: 26px;
+        width: max-content;
+        margin: 0 auto;
+        @media (max-width: 390px) {
+            width:auto;
+            border-radius: 32px;
+        }
         
         li.tab {
            background-color: $color-pttan;
            padding: 0 20px;
+           border: 0;
            a {
                color: $color-graygreen;
+           }
+           .tab-title {
+               padding: .5rem 0;
+               @include breakpoint("small") {
+                padding: spacing("half") spacing("single");
+               }
            }
            &:first-child {
                border-radius: 22px 0 0 22px;
@@ -166,7 +182,15 @@
                    color: #FFF;
                    font-weight: 400;
                }
+               @media (max-width: 390px) {
+          
+                border-radius: 32px;
+                }
            }
+           @media (max-width: 390px) {
+          
+            border-radius: 32px;
+            }
         }
     }
 }
@@ -396,7 +420,7 @@
         display: block;
         margin: 25px 0;
     }
-    @include breakpoint("medium") {
+    @media (min-width:950px){
         padding: 0;
         img {
             margin-bottom: 6px;
