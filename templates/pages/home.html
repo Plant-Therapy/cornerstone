@@ -18,7 +18,7 @@ blog:
     {{/and}}
     {{{region name="home_below_carousel"}}}
     <div class="homepage--planting-kindess-ticker">
-        <p><span>$36,123.23</span> donated to local and world-wide organizations in need. Learn More about <a href="#">Planting Kindness</a>.</p>
+        <p><span class="count" data-target="40000">0</span> donated to local and world-wide organizations in need. Learn More about <a href="#">Planting Kindness</a>.</p>
         
     </div>
     <div class="homepage--body-category-nav">
@@ -338,4 +338,43 @@ function sideScroll(element,direction,speed,distance,step){
         }
     }, speed);
 }
+</script>
+<script>
+    const counters = document.querySelectorAll(".count");
+    const speed = 40000;
+    loopcount = 0;
+    //count = 0;
+
+        function formatDollar(n, currency) {
+            return currency + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+        }
+    counters.forEach((counter) => {
+        const updateCount = () => {
+            //const target = parseInt(+counter.getAttribute("data-target"));
+            target = 40000.00;
+            
+            const count = parseInt(+counter.innerText);
+            //const increment = Math.trunc(target / speed);
+            min = 100;
+            max = 625;
+            increment = Math.random() * (max - min) + min;
+            increment = increment.toFixed(2);
+            increment = parseFloat(increment);
+            
+            //console.log(increment);
+            //console.log(typeof increment);
+
+            if (loopcount < target) {
+
+                counter.innerText = formatDollar(loopcount + increment, '$');
+                loopcount=loopcount + increment;
+                //console.log(loopcount);
+                setTimeout(updateCount, 2000);
+            } else {
+                count.innerText = target;
+            }
+        };
+        updateCount();
+    });
+
 </script>
