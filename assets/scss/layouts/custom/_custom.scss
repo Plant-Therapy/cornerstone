@@ -3,6 +3,16 @@ section.landing {
     background-color: #fff;
 }
 
+.shogun-accordion-body { 
+    padding: 20px;
+}
+h4.shogun-accordion-title {  
+    color: $color-graygreen !important;
+}
+.shogun-accordion-heading {
+    background: $color-ptbluelightest !important;
+}
+
 .springblends {
     @import url("https://use.typekit.net/lyt5ppr.css");
     section:focus {
@@ -434,6 +444,14 @@ margin: 0;
     }
 }
 
+a {
+    color: $color-ptgreen;
+    text-decoration: none;
+    &:hover {
+        color: $color-ptgreen;
+        text-decoration: underline;
+    }
+}
 .page-header__purple {
     display: flex;
     justify-content: center;

@@ -34,7 +34,8 @@
 
     @include breakpoint("medium") {
         @include grid-column(
-            $columns: 8,
+            //$columns: 8,
+            $columns: 12,
             $center: true
         );
     }
