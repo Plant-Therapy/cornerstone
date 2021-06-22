@@ -434,3 +434,97 @@ margin: 0;
     }
 }
 
+.page-header__purple {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: $color-ptpurple;
+    > div  {
+        flex: 1;
+        
+        &.content {
+            position: relative;
+            padding: 20px;
+            .breadcrumbs {
+                position: absolute;
+                
+                top: 5px;
+                left: 5px;
+                .breadcrumb-label {
+                    color: #FFF;
+                }
+                .breadcrumb {
+                    color:#FFF;
+                }
+            }
+            > div {
+                //display: flex;
+                max-width: 480px;
+            }
+            display: flex;
+   
+            justify-content: center;
+            align-items: center;
+            background: url("//cdn.planttherapy.com/images/web/BC/plantingkindness/header-bg.png") bottom center no-repeat $color-ptpurple;
+            p, h1 {
+                color: #FFF;
+            }
+        }
+    }
+    @media  (max-width: 800px) {
+        .image {
+            display: none;
+        }
+        div.content {
+            text-align: center;
+            padding: 80px 20px;
+        }
+    
+        
+    }
+}
+.page__subheader {
+    background-color: $color-pttan;
+    padding: 50px 20px;
+    text-align: center;
+    .links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+        flex-wrap: wrap;
+        a {
+            width: 160px;
+            text-align: center;
+            margin: 10px;
+            img {
+                background-blend-mode: multiply;
+            }
+            
+        }
+    }
+}
+.givingback__support {
+    display: flex;
+    padding: 30px 20px;
+    background-color: $color-ptbluelightest;
+    justify-content: space-between;
+    h3 {
+        color: $color-graygreen;
+        margin: 0;
+        line-height: 2.2em;
+    }
+    .button { 
+        margin-bottom: 0;
+    }
+    @media (max-width: 800px) {
+        flex-direction: column;
+        text-align: center;
+        h3 {
+            line-height: normal;
+            margin-bottom: 20px;
+        }
+        > div {
+            text-align: center;
+        }
+    }
+}

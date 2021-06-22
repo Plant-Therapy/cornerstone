@@ -1,0 +1,101 @@
+{{#partial "page"}}
+
+<!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+
+<main class="page">
+    <!-- {{#unless theme_settings.hide_page_heading }}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {{/unless}}
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+    
+-->
+    <header class="page-header__purple">
+        <div class="content">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            <div>
+            <h1>Planting Kindness</h1>
+            <p>At Plant Therapy, our goal is to have the greatest possible impact on the most people. Since the
+                beginning, Plant Therapy owners and staff have placed donations, service work, and local support at the
+                core of what we do and how we operate. Each year, we set aside a portion of the proceeds from each unit
+                sold, to fund philanthropic local and national causes. At Plant Therapy, our goal is to have the greatest
+                possible impact on the most people. Since the beginning, Plant Therapy owners and staff have placed
+                donations, service work, and local support at the core of what we do and how we operate. Each year, we
+                set aside a portion of the proceeds from each unit sold, to fund philanthropic local and national
+                causes.</p>
+            </div>
+
+        </div>
+        <div class="image">
+            <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/headerpk.jpg" alt="Planting Kindness">
+
+        </div>
+    </header>
+    <section class="page__subheader">
+        <h2>Organizations We Have Partnered With</h2>
+        <div class="links">
+            <a href="#">
+                <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/logo-boys-and-girls.png" alt="Boys and Girls Club">
+                Boys and Girls Club
+            </a>
+            <a href="#">
+                <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/logo-QRU.png" alt="QRU Fundraiser">
+                QRU Fundraiser
+            </a>
+            <a href="#">
+                <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/logo-make-a-wish.png" alt="Make-A-Wish">
+                Make-A-Wish
+            </a>
+            <a href="#">
+                <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/logo-alzheimers.png" alt="Alzheimers">
+                Alzheimers Association
+            </a>
+            <a href="#">
+                <img src="//cdn.planttherapy.com/images/web/BC/plantingkindness/logo-africa-heartwood.png" alt="Africa Heartwood">
+                Africa Heartwood Project
+            </a>
+
+        </div>
+
+    </section>
+
+    {{{region name="page_builder_content"}}}
+
+    <div class="page-content page-content--centered">
+        {{#replace '%%Syndicate%%' page.content}}
+        {{> components/page/rss_feed}}
+        {{else}}
+        <p>{{{page.content}}}</p>
+        {{/replace}}
+    </div>
+
+    <div class="givingback__support">
+        <h3>Interested in having Plant Therapy support your cause?</h3>
+        <div><a href="#" class="button secondary--cta_solid">Apply Here</a></div>
+        
+
+    </div>
+
+    {{#if page.feed}}
+    <ul>
+        {{#each page.feed}}
+        <li>
+            <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+            <p>{{content}}</p>
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}
