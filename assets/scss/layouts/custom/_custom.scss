@@ -452,11 +452,11 @@ a {
         text-decoration: underline;
     }
 }
-.page-header__purple {
+.page-header {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    background-color: $color-ptpurple;
+    
     > div  {
         flex: 1;
         
@@ -469,10 +469,10 @@ a {
                 top: 5px;
                 left: 5px;
                 .breadcrumb-label {
-                    color: #FFF;
+                    //color: #FFF;
                 }
                 .breadcrumb {
-                    color:#FFF;
+                    //color:#FFF;
                 }
             }
             > div {
@@ -483,15 +483,13 @@ a {
    
             justify-content: center;
             align-items: center;
-            background: url("//cdn.planttherapy.com/images/web/BC/plantingkindness/header-bg.png") bottom center no-repeat $color-ptpurple;
-            p, h1 {
-                color: #FFF;
-            }
+
         }
     }
     @media  (max-width: 800px) {
+        flex-direction: column;
         .image {
-            display: none;
+            //display: none;
         }
         div.content {
             text-align: center;
@@ -500,6 +498,70 @@ a {
     
         
     }
+    &__5050-purple {
+        @extend .page-header;
+        background-color: $color-ptpurple;
+        .content {
+            background: url("//cdn.planttherapy.com/images/web/BC/plantingkindness/header-bg.png") bottom center no-repeat $color-ptpurple;
+            p, h1 {
+                color: #FFF;
+            }
+        }
+    }
+    &__5050-tan {
+        @extend .page-header;
+        background-color: $color-pttan;
+        .content {
+            background: url("//cdn.planttherapy.com/images/web/BC/headers/tan-bg.png") bottom center no-repeat $color-pttan;
+
+        }
+    }
+    &__5050-green {
+        @extend .page-header;
+        background-color: $color-graygreen;
+        .content {
+            background: url("//cdn.planttherapy.com/images/web/BC/headers/green-bg.png") center center no-repeat $color-graygreen;
+            p, h1 {
+                color: #FFF;
+            }
+        }
+    }
+    &__single-tan {
+        @extend .page-header;
+        background: url("//cdn.planttherapy.com/images/web/BC/headers/tan-single-bg.png") bottom center no-repeat $color-pttan;
+        background-size: contain;
+  
+        
+        .content {
+            > div {
+                max-width: 575px;
+                text-align: center;
+
+            }
+           
+        }
+    }
+    &__single-photobg {
+        @extend .page-header;
+        background: linear-gradient(rgba(78, 98, 98, 0.35),rgba(78, 98, 98, 0.35)), url("//cdn.planttherapy.com/images/web/BC/headers/photobackground.jpg") center center no-repeat $color-pttan;
+        background-size: cover;
+        min-height: 400px;
+  
+        
+        .content {
+            p, h1 {
+                color: #FFF;
+            }
+            > div {
+                max-width: 575px;
+                text-align: center;
+
+            }
+           
+        }
+    }
+    
+
 }
 .page__subheader {
     background-color: $color-pttan;

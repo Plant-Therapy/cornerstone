@@ -127,7 +127,7 @@
     "color-textLink": "#91BF4B",
     "color-textLink--hover": "#757575",
     "color-textLink--active": "#757575",
-    "color-textHeading": "#444444",
+    "color-textHeading": "#4E6262",
     "color-primary": "#757575",
     "color-primaryDark": "#666666",
     "color-primaryDarker": "#333333",
@@ -392,7 +392,7 @@
       "images": {},
       "settings": {
         "hide_breadcrumbs": false,
-        "hide_page_heading": false,
+        "hide_page_heading": true,
         "hide_category_page_heading": false,
         "hide_blog_page_heading": false,
         "hide_contact_us_page_heading": false,
