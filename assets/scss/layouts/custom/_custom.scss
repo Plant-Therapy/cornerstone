@@ -3,14 +3,32 @@ section.landing {
     background-color: #fff;
 }
 
+.shogun-accordion-wrapper {
+    max-width: 800px;
+    margin: 30px auto;
+    > .shogun-accordion {
+        border: none !important;
+        border-radius: 0 !important;
+        border-top: 1px solid $color-gray !important;
+    }
+    
+}
 .shogun-accordion-body { 
     padding: 20px;
 }
+.shogun-accordion {
+    box-shadow: none !important;
+}
+.shogun-accordion-wrapper > .shogun-accordion > .shogun-accordion-body {
+    border-top: none !important;
+}
 h4.shogun-accordion-title {  
     color: $color-graygreen !important;
+    //font-weight: bold;
 }
 .shogun-accordion-heading {
-    background: $color-ptbluelightest !important;
+    background: none !important;
+    box-shadow: none !important;
 }
 
 .springblends {
