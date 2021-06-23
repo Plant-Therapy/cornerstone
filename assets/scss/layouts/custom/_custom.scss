@@ -541,6 +541,24 @@ a {
            
         }
     }
+    &__single-purple {
+        @extend .page-header;
+        background: url("//cdn.planttherapy.com/images/web/BC/headers/purple-single-bg.png") bottom center no-repeat $color-ptpurple;
+        background-size: contain;
+  
+        
+        .content {
+            p, h1 {
+                color: #FFF;
+            }
+            > div {
+                max-width: 575px;
+                text-align: center;
+
+            }
+           
+        }
+    }
     &__single-photobg {
         @extend .page-header;
         background: linear-gradient(rgba(78, 98, 98, 0.35),rgba(78, 98, 98, 0.35)), url("//cdn.planttherapy.com/images/web/BC/headers/photobackground.jpg") center center no-repeat $color-pttan;
