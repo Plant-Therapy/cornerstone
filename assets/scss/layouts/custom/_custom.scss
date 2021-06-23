@@ -4,8 +4,8 @@ section.landing {
 }
 
 .shogun-accordion-wrapper {
-    max-width: 800px;
-    margin: 30px auto;
+    //@at-root: 800px;
+    //margin: 30px auto;
     > .shogun-accordion {
         border: none !important;
         border-radius: 0 !important;
