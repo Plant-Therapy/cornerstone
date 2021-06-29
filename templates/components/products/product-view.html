@@ -92,6 +92,9 @@
                 {{/or}}
             </div>
             {{{region name="product_below_price"}}}
+            <div class="yotpo bottomLine"
+                 data-yotpo-product-id=""{{ product.id }}">
+            </div>
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                 {{#if settings.show_product_rating}}
                     {{#if product.num_reviews '>' 0}}
@@ -265,4 +268,14 @@
     {{> components/common/modal/modal-close-btn }}
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
+</div>
+
+<div class="yotpo yotpo-main-widget"
+     data-product-id="{{ product.id }}" 
+     data-price="{{ product.price.without_tax.value }}"
+     data-currency="{{ currency_selector.active_currency_code }}"
+     data-name="{{ product.title }}"
+     data-url="{{ product.url }}"
+     data-image-url="{{ getImage product.main_image }}"
+     data-description="{{ product.description }}">
 </div>
