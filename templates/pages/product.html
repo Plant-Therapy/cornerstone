@@ -9,6 +9,7 @@ product:
     similar_by_views:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 ---
+
 {{inject 'productId' product.id}}
 
 {{#partial "page"}}
@@ -28,11 +29,11 @@ product:
             {{> components/products/videos product.videos}}
         {{/if}}
 
-        {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
-            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-        {{/all}}
+        {{!#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
+            {{!> components/products/reviews reviews=product.reviews product=product urls=urls}}
+        {{!/all}}
 
-        {{> components/products/tabs}}
+        {{!> components/products/tabs}}
     </div>
 {{/partial}}
 {{> layout/base}}
