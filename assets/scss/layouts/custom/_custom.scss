@@ -655,3 +655,8 @@ a {
         background: url('//cdn.planttherapy.com/images/web/BC/medicaldisclosures/background-bottom.png') bottom left no-repeat;
     }
 }
+.circle-image__border img {
+    border: 1px solid $color-ptgreen;
+    border-radius: 50%;
+    padding: 15px;
+}
