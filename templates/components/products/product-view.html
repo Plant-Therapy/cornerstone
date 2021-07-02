@@ -1,5 +1,26 @@
-<div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>
-{{#each product.reviews.messages}}
+<div class="productView"
+    {{#if settings.data_tag_enabled}}
+         data-event-type="product"
+         data-entity-id="{{product.id}}"
+         data-name="{{product.title}}"
+         data-product-category="{{#each product.category}}
+                                     {{#if @last}}
+                                         {{this}}
+                                     {{else}}
+                                         {{this}}, 
+                                    {{/if}}
+                                {{/each}}"
+         data-product-brand="{{product.brand.name}}"
+         data-product-price="{{#if product.price.with_tax}}
+                                 {{product.price.with_tax.value}}
+                             {{else}}
+                                 {{product.price.without_tax.value}}
+                             {{/if}}"
+         data-product-variant="single-product-option"
+    {{/if}}>
+    
+    {{!--
+    {{#each product.reviews.messages}}
         {{#if error}}
             {{> components/common/alert/alert-error error}}
         {{/if}}
@@ -7,38 +28,38 @@
             {{> components/common/alert/alert-success success}}
         {{/if}}
     {{/each}}
-
+    --}}
     <section class="productView-images" data-image-gallery>
         {{!--
             Note that these image sizes are coupled to image sizes used in /assets/js/theme/common/product-details.js
             for variant/rule image replacement
         --}}
         {{#if product.images.length '>' 1 }}
-        {{> components/carousel-content-announcement}}
+            {{> components/carousel-content-announcement}}
         {{/if}}
         <figure class="productView-image"
                 data-image-gallery-main
-                {{#if product.main_image}}
+            {{#if product.main_image}}
                 data-zoom-image="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size }}"
-                {{/if}}
-                >
+            {{/if}}
+        >
             <div class="productView-img-container">
                 {{!-- Remove the surrounding a-element if there is no main image. --}}
                 {{#if product.main_image}}
-                    <a href="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size}}"
-                        target="_blank"{{#if schema}} itemprop="image"{{/if}}>
+                <a href="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size}}"
+                   target="_blank"{{#if schema}} itemprop="image"{{/if}}>
                 {{/if}}
                 {{> components/common/responsive-img
-                    image=product.main_image
-                    class="productView-image--default"
-                    fallback_size=theme_settings.product_size
-                    lazyload=theme_settings.lazyload_mode
-                    default_image=theme_settings.default_image_product
-                    otherAttributes="data-main-image"
+                        image=product.main_image
+                        class="productView-image--default"
+                        fallback_size=theme_settings.product_size
+                        lazyload=theme_settings.lazyload_mode
+                        default_image=theme_settings.default_image_product
+                        otherAttributes="data-main-image"
                 }}
                 {{!-- Remove the surrounding a-element if there is no main image. --}}
                 {{#if product.main_image}}
-                    </a>
+                </a>
                 {{/if}}
             </div>
         </figure>
@@ -53,18 +74,18 @@
             {{#each product.images}}
                 <li class="productView-thumbnail">
                     <a
-                        class="productView-thumbnail-link"
-                        href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
-                        data-image-gallery-item
-                        data-image-gallery-new-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.product_size}}"
-                        data-image-gallery-new-image-srcset="{{getImageSrcset this use_default_sizes=true}}"
-                        data-image-gallery-zoom-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                            class="productView-thumbnail-link"
+                            href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                            data-image-gallery-item
+                            data-image-gallery-new-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.product_size}}"
+                            data-image-gallery-new-image-srcset="{{getImageSrcset this use_default_sizes=true}}"
+                            data-image-gallery-zoom-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
                     >
-                    {{> components/common/responsive-img
-                        image=this
-                        fallback_size=../theme_settings.productview_thumb_size
-                        lazyload=../theme_settings.lazyload_mode
-                    }}
+                        {{> components/common/responsive-img
+                                image=this
+                                fallback_size=../theme_settings.productview_thumb_size
+                                lazyload=../theme_settings.lazyload_mode
+                        }}
                     </a>
                 </li>
             {{/each}}
@@ -91,39 +112,44 @@
                     {{> components/common/login-for-pricing}}
                 {{/or}}
             </div>
+
             {{{region name="product_below_price"}}}
-            <div class="yotpo bottomLine"
-                 data-yotpo-product-id=""{{ product.id }}">
-            </div>
-            <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
+
+            <div>
                 {{#if settings.show_product_rating}}
-                    {{#if product.num_reviews '>' 0}}
-                        {{#if schema}}
+                    <div class="yotpo bottomLine" data-yotpo-product-id="{{ product.id }}"></div>
+                {{/if}}
+            </div>
+
+            {{! Removed the built in reviews. We are using Yotpo.}}
+            <!--<div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
+                {{#if settings.show_product_rating}}
+                {{#if product.num_reviews '>' 0}}
+                    {{#if schema}}
                             <meta itemprop="ratingValue" content="{{product.rating}}">
                             <meta itemprop="ratingCount" content="{{product.num_reviews}}">
                             <meta itemprop="reviewCount" content="{{product.num_reviews}}">
                         {{/if}}
-                    {{/if}}
-                        {{> components/products/ratings rating=product.rating}}
-                    {{#if product.num_reviews '>' 0}}
+                {{/if}}
+                {{> components/products/ratings rating=product.rating}}
+                {{#if product.num_reviews '>' 0}}
                         <a href="{{product.url}}#product-reviews" id="productReview_link">
                             {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
                         </a>
                     {{else}}
                         <span>{{lang 'products.reviews.link_to_review' total=product.num_reviews}}</span>
                     {{/if}}
-                {{/if}}
+            {{/if}}
                 {{#if settings.show_product_reviews}}
                     <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
-                       class="productView-reviewLink productView-reviewLink--new"
+                       class="productView-reviewLink productView-reviewLink&#45;&#45;new"
                        {{#unless is_ajax}}data-reveal-id="modal-review-form"{{/unless}}
-                       role="button"
-                    >
+                       role="button">
                        {{lang 'products.reviews.new'}}
                     </a>
-                    {{> components/products/modals/writeReview}}
+                    {{! > components/products/modals/writeReview}} // Zack Commented this out with the !
                 {{/if}}
-            </div>
+            </div>-->
             {{product.detail_messages}}
             <dl class="productView-info">
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
@@ -151,27 +177,27 @@
                     <dd class="productView-info-value" data-product-width>
                         {{product.width}}
                         {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
+                            ({{lang 'products.measurement.metric'}})
                         {{else}}
-                        ({{lang 'products.measurement.imperial'}})
+                            ({{lang 'products.measurement.imperial'}})
                         {{/if}}
                     </dd>
                     <dt class="productView-info-name">{{lang 'products.height'}}</dt>
                     <dd class="productView-info-value" data-product-height>
                         {{product.height}}
                         {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
+                            ({{lang 'products.measurement.metric'}})
                         {{else}}
-                        ({{lang 'products.measurement.imperial'}})
+                            ({{lang 'products.measurement.imperial'}})
                         {{/if}}
                     </dd>
                     <dt class="productView-info-name">{{lang 'products.depth'}}</dt>
                     <dd class="productView-info-value" data-product-depth>
                         {{product.depth}}
                         {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
+                            ({{lang 'products.measurement.metric'}})
                         {{else}}
-                        ({{lang 'products.measurement.imperial'}})
+                            ({{lang 'products.measurement.imperial'}})
                         {{/if}}
                     </dd>
                 {{/all}}
@@ -270,12 +296,16 @@
     <div class="loadingOverlay"></div>
 </div>
 
-<div class="yotpo yotpo-main-widget"
-     data-product-id="{{ product.id }}" 
-     data-price="{{ product.price.without_tax.value }}"
-     data-currency="{{ currency_selector.active_currency_code }}"
-     data-name="{{ product.title }}"
-     data-url="{{ product.url }}"
-     data-image-url="{{ getImage product.main_image }}"
-     data-description="{{ product.description }}">
+<div>
+    {{#if settings.show_product_reviews}}
+        <div class="yotpo yotpo-main-widget"
+             data-product-id="{{ product.id }}"
+             data-price="{{ product.price.without_tax.value }}"
+             data-currency="{{ currency_selector.active_currency_code }}"
+             data-name="{{ product.title }}"
+             data-url="{{ product.url }}"
+             data-image-url="{{ getImage product.main_image }}"
+             data-description="{{ product.description }}">
+        </div>
+    {{/if}}
 </div>
