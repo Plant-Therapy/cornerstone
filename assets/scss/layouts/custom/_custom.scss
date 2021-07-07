@@ -660,3 +660,11 @@ a {
     border-radius: 50%;
     padding: 15px;
 }
+
+.eo101-multibackground {
+    background: url('//cdn.planttherapy.com/images/web/BC/eo101/background-top.png') top right no-repeat, url('//cdn.planttherapy.com/images/web/BC/eo101/background-bottom.png') bottom left no-repeat;
+    @media (max-width: 800px) {
+        padding-top: 0;
+        //background: url('//cdn.planttherapy.com/images/web/BC/eo101/background-top.png') top left no-repeat;
+    }
+}
