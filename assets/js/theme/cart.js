@@ -6,6 +6,7 @@ import ShippingEstimator from './cart/shipping-estimator';
 import { defaultModal } from './global/modal';
 import swal from './global/sweet-alert';
 import CartItemDetails from './common/cart-item-details';
+import CartContainsCBD from './cart/cart-contains-cbd';
 
 export default class Cart extends PageManager {
     onReady() {
@@ -17,7 +18,15 @@ export default class Cart extends PageManager {
             .hide(); // TODO: temporary until roper pulls in his cart components
         this.$activeCartItemId = null;
         this.$activeCartItemBtnAction = null;
-
+        
+        utils.api.cart.getCart({includeOptions: true}, (err, response) => {
+            console.log(response);
+            this.cartContainsCBD = CartContainsCBD(this.context.storefrontAPIToken, response).then(containsCBD => {
+                console.log(containsCBD);
+                return containsCBD
+            });
+            // console.log(err);
+        });
         this.bindEvents();
     }
 

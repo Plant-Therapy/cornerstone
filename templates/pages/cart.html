@@ -11,7 +11,6 @@ cart: true
 	data-storefront-api-token="{{settings.storefront_api.token}}"
 >
 </script>
-
 <script>
     var config = { childList: true, subtree: true };
 		// Change totalClassName
@@ -25,17 +24,17 @@ cart: true
 	        if (elms.length == 0) {
 	            return;
 	        }
-	        
+
 	        var newPrice = elms[0].innerHTML;
 			if (bigCommerceTotalPrice == "") {
               bigCommerceTotalPrice = newPrice;
               return;
             }
-	        
+
 	        if (newPrice !== bigCommerceTotalPrice && window.BoltCheckout && window.BoltCheckout.reloadBigCommerceCart) {
 	            window.BoltCheckout.reloadBigCommerceCart();
 	        }
-	        
+
 	        bigCommerceTotalPrice = newPrice;
 		}, 200);
     };
@@ -66,6 +65,8 @@ cart: true
 
             {{{region name="cart_below_totals"}}}
 
+
+
             {{#if cart.show_primary_checkout_button}}
                 <div class="cart-actions cart-content-padding-right">
                     <div data-tid="instant-bolt-checkout-button" style="float: right;">
@@ -73,8 +74,8 @@ cart: true
 	                    </object>
                     </div>
 
-                    <a class="button button--primary" 
-                        href="{{urls.checkout.single_address}}" 
+                    <a class="button button--primary"
+                        href="{{urls.checkout.single_address}}"
                         title="{{lang 'cart.checkout.title'}}"
                         style="display:none;"
                     >
