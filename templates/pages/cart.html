@@ -1,7 +1,9 @@
 ---
 cart: true
 ---
+{{inject 'cancelButtonText' (lang 'common.cancel')}}
 {{#partial "page"}}
+{{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
 
 <script
 	id="bolt-connect"
@@ -25,17 +27,17 @@ cart: true
 	        if (elms.length == 0) {
 	            return;
 	        }
-	        
+
 	        var newPrice = elms[0].innerHTML;
 			if (bigCommerceTotalPrice == "") {
               bigCommerceTotalPrice = newPrice;
               return;
             }
-	        
+
 	        if (newPrice !== bigCommerceTotalPrice && window.BoltCheckout && window.BoltCheckout.reloadBigCommerceCart) {
 	            window.BoltCheckout.reloadBigCommerceCart();
 	        }
-	        
+
 	        bigCommerceTotalPrice = newPrice;
 		}, 200);
     };
@@ -44,7 +46,7 @@ cart: true
 
 <div class="page">
 
-    <main class="page-content" data-cart>
+    <div class="page-content" data-cart>
         {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
         {{> components/cart/page-title}}
@@ -73,8 +75,8 @@ cart: true
 	                    </object>
                     </div>
 
-                    <a class="button button--primary" 
-                        href="{{urls.checkout.single_address}}" 
+                    <a class="button button--primary"
+                        href="{{urls.checkout.single_address}}"
                         title="{{lang 'cart.checkout.title'}}"
                         style="display:none;"
                     >
@@ -103,7 +105,7 @@ cart: true
             <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
         {{/if}}
 
-    </main>
+    </div>
 </div>
 {{/partial}}
 {{> layout/base}}

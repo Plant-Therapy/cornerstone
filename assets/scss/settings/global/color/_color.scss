@@ -68,11 +68,18 @@ $color-textLink:                    stencilColor("color-textLink");
 $color-textLink-hover:              stencilColor("color-textLink--hover");
 $color-textLink-active:             stencilColor("color-textLink--active");
 
+
+// Tooltips
+// -----------------------------------------------------------------------------
+$focusTooltip-textColor:            stencilColor("focusTooltip-textColor");
+$focusTooltip-backgroundColor:      stencilColor("focusTooltip-backgroundColor");
+
+
 // PT Colors
 // -----------------------------------------------------------------------------
 $color-lighttext:                   #F9FAF7;
 $color-graygreen:                   #4E6262;
-$color-ptgreen:                     #91BF4B;                  
+$color-ptgreen:                     #91BF4B;
 $color-preheader-link:              #F9FAF7;
 $color-gray:                        #E0E0E0;
 $color-ptlightblue:                 #BDDBDB;
@@ -80,4 +87,4 @@ $color-ptred:                       #E16b58;
 $color-pttan:                       #F9FAF7;
 $color-pt-peach:                    #f4d9d4;
 $color-ptpurple:                    #585064;
-$color-ptbluelightest:              #f3f9f9
+$color-ptbluelightest:              #f3f9f9;

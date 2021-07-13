@@ -1,6 +1,6 @@
 {
-  "name": "Cornerstone-2021-05-14T15:45",
-  "version": "5.3.0",
+  "name": "Cornerstone",
+  "version": "5.7.1",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 0,
@@ -313,12 +313,12 @@
     "color_badge_product_sold_out_badges": "#007dc6",
     "color_text_product_sold_out_badges": "#ffffff",
     "color_hover_product_sold_out_badges": "#000000",
+    "focusTooltip-textColor": "#ffffff",
+    "focusTooltip-backgroundColor": "#313440",
     "restrict_to_login": false,
     "swatch_option_size": "22x22",
     "social_icon_placement_top": false,
     "social_icon_placement_bottom": "bottom_none",
-    "geotrust_ssl_common_name": "",
-    "geotrust_ssl_seal_size": "M",
     "navigation_design": "simple",
     "price_ranges": true,
     "pdp-price-label": "",
@@ -335,6 +335,13 @@
     "paymentbuttons-paypal-label": "checkout",
     "paymentbuttons-paypal-tagline": false,
     "paymentbuttons-paypal-fundingicons": false,
+    "paymentbanners-homepage-color": "white",
+    "paymentbanners-homepage-ratio": "8x1",
+    "paymentbanners-cartpage-text-color": "black",
+    "paymentbanners-cartpage-logo-position": "left",
+    "paymentbanners-cartpage-logo-type": "primary",
+    "paymentbanners-proddetailspage-color": "white",
+    "paymentbanners-proddetailspage-ratio": "8x1",
     "supported_card_type_icons": [
       "american_express",
       "diners",
@@ -903,7 +910,9 @@
         "color_hover_product_sale_badges": "#000000",
         "color_badge_product_sold_out_badges": "#007dc6",
         "color_text_product_sold_out_badges": "#ffffff",
-        "color_hover_product_sold_out_badges": "#000000"
+        "color_hover_product_sold_out_badges": "#000000",
+        "focusTooltip-textColor": "#666666",
+        "focusTooltip-backgroundColor": "#ffffff"
       }
     },
     {
@@ -1111,7 +1120,9 @@
         "color_hover_product_sale_badges": "#000000",
         "color_badge_product_sold_out_badges": "#007dc6",
         "color_text_product_sold_out_badges": "#ffffff",
-        "color_hover_product_sold_out_badges": "#000000"
+        "color_hover_product_sold_out_badges": "#000000",
+        "focusTooltip-textColor": "#ffffff",
+        "focusTooltip-backgroundColor": "#313440"
       }
     }
   ]

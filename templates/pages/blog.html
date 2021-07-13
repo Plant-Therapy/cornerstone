@@ -9,11 +9,9 @@ blog:
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
-
-
-<main class="page">
+<section class="page">
     {{#unless theme_settings.hide_blog_page_heading }}
-        <!--<h1 class="page-heading">{{ blog.name }}</h1>-->
+        <h1 class="page-heading">{{ blog.name }}</h1>
     {{/unless}}
     <div class="blog-nav">
         <a href="/blog/"><img src="//cdn.planttherapy.com/images/web/global/Everyday-Essentials.png" alt="Everyday Essentials by Plant Therapy"></a>
@@ -39,10 +37,10 @@ blog:
         {{> components/blog/post post=this}}
     {{/each}}
     </div>
-    
+
 
     {{> components/common/paginator pagination.blog}}
-</main>
+</section>
 
 {{/partial}}
 {{> layout/base}}

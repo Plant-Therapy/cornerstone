@@ -15,11 +15,21 @@ import adminBar from './global/adminBar';
 import carousel from './common/carousel';
 import loadingProgressBar from './global/loading-progress-bar';
 import svgInjector from './global/svg-injector';
+import { translatePageBuilderValues } from './common/utils/translations-utils';
 
 export default class Global extends PageManager {
     onReady() {
         const {
-            channelId, cartId, productId, categoryId, secureBaseUrl, maintenanceModeSettings, adminBarLanguage, showAdminBar,
+            channelId,
+            cartId,
+            productId,
+            categoryId,
+            secureBaseUrl,
+            maintenanceModeSettings,
+            adminBarLanguage,
+            showAdminBar,
+            isProductCardPresented,
+            isProductListPresented,
         } = this.context;
         cartPreview(secureBaseUrl, cartId);
         quickSearch();
@@ -36,10 +46,15 @@ export default class Global extends PageManager {
         }
         loadingProgressBar();
         svgInjector();
+
         const url = 'https://cdn.bundleb2b.net/bundleb2b.2.10.0.js';
         const el = document.createElement('script');
         el.setAttribute('src', url);
         document.querySelector('body').append(el);
         window.b3themeConfig = {};
+
+        if (isProductListPresented || isProductCardPresented) {
+            translatePageBuilderValues();
+        }
     }
 }
